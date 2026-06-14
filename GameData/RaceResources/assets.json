@@ -1,0 +1,251 @@
+{
+  "quick_learners": {
+    "description": "Humans earn [b]INT%[/b] extra evolution points, and [b]+{ep_creation_bonus}[/b] to starting evolution points.",
+    "effects": [
+      {"modifier": "ep_bonus", "formula": "{intel}"},
+      {"modifier": "ep_creation_bonus", "value": 30}
+    ]
+  },
+  "passionate": {
+    "description": "Masters of the craft they dedicate themselves to, humans have a higher skill maximum than other races.",
+    "effects": [
+      {"flag": "passionate"}
+    ]
+  },
+  "nightvision": {
+    "description": "Able to see clearly as long as there's a dim source of light.",
+    "effects": [
+      {"grants_abilities": ["nightvision"]}
+    ]
+  },
+  "elegance": {
+    "description": "Lighter bodies without losing muscle, granting a Weight Value modifier of [b]{weight_mod}[/b].",
+    "effects": [
+      {"modifier": "weight_mod", "value": -0.5}
+    ]
+  },
+  "fae_descent": {
+    "description": "In the veins of the elves runs the blood of their fae ancestors, granting them [b]+5 MP per level[/b].",
+    "effects": [
+      {"modifier": "mp_bonus", "formula": "5*{g_lvl}"}
+    ]
+  },
+  "pretty": {
+    "description": "{plural} are usually pretty. This will sometimes affect their interactions, allowing for more seduction opportunities.",
+    "effects": [
+      {"flag": "pretty"}
+    ]
+  },
+  "lions_heart": {
+    "description": "A real Dwarf knows no fear!",
+    "effects": [
+      {"flag": "fearless"},
+      {"modifier": "music_buff_mult", "value": 1.5}
+    ]
+  },
+  "tanks": {
+    "description": "Armor is extremely effective on dwarves, granting an extra [b](10+Level)%[/b] equipment armor when worn.",
+    "effects": [
+      {"modifier": "racial_equip_armor", "formula": "{g_lvl} + 10"}
+    ]
+  },
+  "heavy_drinkers": {
+    "description": "Winning a drinking conquest against a dwarf can only be envisioned by a giant or another dwarf. Resistance Rolls to acohol are rolled with advantage.",
+    "effects": [
+      {"stat": "phy_RR_alcohol_advantage", "value": 1}
+    ]
+  },
+  "rage": {
+    "description": "Activeable once per fight for a good roleplay reason, makes the ogre gain [b]+1 Stamina[/b] and [b]2dX[/b] damage based on strength for medium and heavy non-magic attacks. Lasts [b]2 turns[/b] and activates the [b]Wereform[/b].",
+    "effects": [
+      {"grants_abilities": ["rage"]}
+    ]
+  },
+  "thick_head": {
+    "description": "[b]+{racial_nat_armor}%[/b] Natural Armor.",
+    "effects": [
+      {"stat": "racial_nat_armor", "value": 10}
+    ]
+  },
+  "warborn": {
+    "description": "A [b]15%[/b] bonus is added to natural armor and all attack rolls when surrounded by [b]war chants[/b], [b]cheering allies[/b] or [b]a ransacked environment[/b].",
+    "effects": [
+      {"grants_abilities": ["warborn"]}
+    ]
+  },
+  "climbers": {
+    "description": "A gremlin is used to climb most vertical surfaces without difficulty, not needing any skill check.",
+    "effects": [
+      {"flag": "climber"}
+    ]
+  },
+  "elusive": {
+    "description": "[b]+{racial_dodge_armor}%[/b] Dodge Armor as longs as they don't wear any heavy armor. (DONT FORGET TO IMPLEMENT THIS LIMIT)",
+    "effects": [
+      {"stat": "racial_dodge_armor", "value": 20}
+    ]
+  },
+  "treasure_smellers": {
+    "description": "Gremlins find treasure where there shouldn't normally be. Starting money [b]*{start_gold_mult}[/b].",
+    "effects": [
+      {"flag": "treasure_smeller"},
+      {"stat": "start_gold_mult", "value": 1.5}
+    ]
+  },
+  "animal_speech": {
+    "description": "Goblins can talk with animals.",
+    "effects": [
+      {"grants_abilities": ["animal_speech"]}
+    ]
+  },
+  "forest_folk": {
+    "description": "Never get lost in forests. Advantage to athletics checks when climbing a tree. (once real game, detailed full map if in forest)",
+    "effects": [
+      {"flag": "forest_folk"},
+      {"stat": "athl_climb_tree_advantage", "value": 1}
+    ]
+  },
+  "mithridatism": {
+    "description": "Used to eat toxic plants since childhood, goblins automatically succeed their RRs against poisons and potions regardless of difficulty. If no RR is allowed, goblins get to roll once.",
+    "effects": [
+      {"flag": "mithridatism"}
+    ]
+  },
+  "darkvision": {
+    "description": "Able to see in complete darkness.",
+    "effects": [
+      {"grants_abilities": ["darkvision"]}
+    ]
+  },
+  "rebuildable": {
+    "description": "Trolls heal [b]1dX per 2 character levels HP[/b] each turn, [b]X[/b] being based on [b](CONST-5)[/b]. Their severed limbs take a [b]long rest[/b] to grow back.",
+    "effects": [
+      {"grants_abilities": ["troll_regen"]}
+    ]
+  },
+  "insulated": {
+    "description": "Lightning seems uneffective on these humanoids. Chain lightnings don't touch them, and electric damage is halved.",
+    "effects": [
+      {"stat": "dmg_res_electric", "value": 0.5},
+      {"flag": "insulated"}
+    ]
+  },
+  "insured": {
+    "description": "Trolls get [b](CONST+ Character Level)%[/b] Natural Armor.",
+    "effects": [
+      {"stat": "racial_nat_armor", "formula": "{cnst}+{g_lvl}"}
+    ]
+  },
+  "mana_tattoos": {
+    "description": "Each Jinn recieves a tattoo during childhood, and keeps enriching it throughout his life. These tattoos channel mana in a special way that offers up to [b]14[/b] abilities.",
+    "effects": [
+      {"flag": "mana_bender"}
+    ]
+  },
+  "aerial": {
+    "description": "Mana and air forces give Jinn a Weight Value modifier of [b]{weight_mod}[/b].",
+    "effects": [
+      {"modifier": "weight_mod", "value": -1}
+    ]
+  },
+  "odorless": {
+    "description": "As long as they keep a decent hygiene, a Jinn has a body which can't be detected by smell.(MAYBE CREATE A SMELL DETECTION RADIUS?)",
+    "effects": [
+      {"flag": "odorless"}
+    ]
+  },
+  "infravision": {
+    "description": "Can percieve heat, even through thin walls.",
+    "effects": [
+      {"grants_abilities": ["infravision"]}
+    ]
+  },
+  "nonflammable": {
+    "description": "Tieflings take halved fire damage.",
+    "effects": [
+      {"stat": "dmg_res_fire", "value": 0.5},
+      {"flag": "nonflammable"}
+    ]
+  },
+  "smoldering_eyes": {
+    "description": "The blazing gaze of tieflings grants them advantage on intimidation rolls.",
+    "effects": [
+      {"stat": "persuasion_intimidation_advantage", "value": 1},
+      {"stat": "performance_intimidation_advantage", "value": 1}
+    ]
+  },
+  "polymorph": {
+    "description": "Dopplers can take one turn to transform into any humanoid's shape. If they copy a humanoid that they can directly see, they have a [b](25+Level*5)%[/b] chance of copying each of their physical powers/assets as well. If it's from imagination, only the appearance is copied and it's slightly unnatural. In this latter case, a successful perception roll with disadvantage against a performance check will result in the disguise being found out.",
+    "effects": [
+      {"grants_abilities": ["polymorph"]}
+    ]
+  },
+  "fae_blood": {
+    "description": "Fairies are even more magical in nature than their fae ancestors. [b]+5 MP per level[/b], and elemental abilities and bending scale on [b]Intelligence[/b] instead of [b]Strength[/b].",
+    "effects": [
+      {"modifier": "mp_bonus", "formula": "5*{g_lvl}"},
+      {"flag": "fae"}
+    ]
+  },
+  "flutterers": {
+    "description": "Their wings flutter silently, allowing them to hover freely and quickly. Flight grants a speed bonus of [b]+{flight_speed_mod}[/b], [b]{racial_dodge_armor}%[/b] Dodge Armor and advantage on stealth rolls as long as the fairy is only wearing light armor. (only stealth, not sleight of hands)",
+    "effects": [
+      {"modifier": "flight_speed_mod", "value": 4},
+      {"stat": "racial_dodge_armor", "value": 35},
+      {"modifier": "stealth_advantage", "value": 1}
+    ]
+  },
+  "resilient": {
+    "description": "[b]+7 HP per level[/b], as there's more to hit in a giant.",
+    "effects": [
+      {"modifier": "hp_bonus", "formula": "7*{g_lvl}"}
+    ]
+  },
+  "hyperthermic": {
+    "description": "Frost damage is halved, and no skill debuffs are suffered because of it.",
+    "effects": [
+      {"stat": "dmg_res_frost", "value": 0.5},
+      {"flag": "hyperthermic"}
+    ]
+  },
+  "heavy_lifting": {
+    "description": "Great weapons are considered one handed, and anything else a toothpick. Carry capacity is doubled.",
+    "effects": [
+      {"modifier": "carry_capacity_mult", "value": 2},
+      {"flag": "heavy_lifting"}
+    ]
+  },
+  "disproportionate": {
+    "description": "A giant's huge body grants them advantage on physical resistance and athletics rolls. On top of that, all AOE attacks have their radius doubled whatever their nature may be and all attacks gain [b]1dX[/b] damage, [b]2dX[/b] starting at level 7.",
+    "effects": [
+      {"modifier": "athl_advantage", "value": 1},
+      {"modifier": "phy_RR_advantage", "value": 1},
+      {"stat": "AOE_mult", "value": 2},
+      {"grants_abilities": ["superbig"]}
+    ]
+  },
+  "unreactive": {
+    "description": "Corrosive damage is halved.",
+    "effects": [
+      {"stat": "dmg_res_acid", "value": 0.5}
+    ]
+  },
+  "swallow": {
+    "description": "A geleton can swallow an enemy on a sucessful [b]hand to hand attack[/b], and for [b]2 stamina points[/b]. The victim won't be able to do anything except trying to escape using an athletics roll once per turn. [b]Suffocation rules apply[/b].",
+    "effects": [
+      {"grants_abilities": ["swallow"]}
+    ]
+  },
+  "nuclear": {
+    "description": "Instead of having vital organs, Geleton only have a coconut sized Core, which stops them from going completely liquid. Its aim penalty is [b]40%[/b] and its damage multiplier is [b]*3[/b].",
+    "effects": [
+      {"flag": "singlecore"}
+    ]
+  },
+  "mutative": {
+    "description": "Geleton can spend evolution points to develop new, powerful mutations. [b]See mutations page[/b].",
+    "effects": [
+      {"flag": "mutative"}
+    ]
+  }
+}

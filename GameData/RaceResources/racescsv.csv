@@ -1,0 +1,14 @@
+race_id;plural;subraces;height;variable_height;scalable_height;has_dimorphism;height_mod;lifespan;bonus_lp;intel;charis;psy;agi;strn;cnst;kn_nat;kn_sci;kn_hist;percep;lang;cr_met;cr_tex;cr_art;persua;perform;magic;mentalRR;acroRR;stealth;w_light;w_vers;w_great;w_range;athlc_RR;h2h;bending;phy_RR;assets;handicaps
+human;"""Humans""";"""caeorn,yugin,nagani""";2;0;0;0;0;100;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"""quick_learners,passionate""";
+elf;"""Elves""";"""high-elf,moon_elf,drow""";2;0;0;0;0;200;0;2;;2;;-1;;;;;;;;;;;;10;;;;;;;10;;;;;"""nightvision,elegance,fae_desescent,pretty""";
+dwarf;"""Dwarves""";"""stone_dwarf,grey_dwarf""";1,5;0;0;0;0;80;0;;1;-2;;2;2;;;;;;15;;;;;;;;;;;10;;;;;;"""lions_heart,tanks,heavy_drinkers""";
+ogre;"""Ogres""";"""white_ogre,swamp_ogre,orc""";2,5;0;0;0;0;70;0;-2;;-2;;5;4;;;;;;;;;;;;;;;;;;;;;;;"""rage,thick_head,warborn""";"""revenge"""
+gremlin;"""Gremlins""";;1;0;0;0;0;120;0;5;;;3;-3;-2;;;;;;10;10;10;;;;;;;;;;;;;;;"""climbers,elusive,treasure_smellers""";"""small"""
+goblin;"""Goblins""";;2;0;0;0;0;100;0;;-2;;3;1;;15;;;15;;;;;;15;;;;;;;;;;;;;"""animal_speech,forest_folk,mithridatism""";"""unurban"""
+troll;"""Trolls""";;2,5;0;0;0;0;60;0;-6;;;1;4;5;;;;;;;;15;;;;;;;;;;;;;;;"""darkvision,rebuildable,insulated,insured""";"""imp_elem_earth,big_bellied"""
+jinn;"""Jinn""";;2;0;0;0;0;150;0;;;3;2;;;;;;15;;;;;;;;;;;;;;;;;10;;"""mana_tattoos,aerial,odorless""";"""imp_elem_air"""
+tiefling;"""Tieflings""";;2;0;0;1;0,5;100;0;;;;;3;2;;;;;;;;;;;;;;;;;;;;;;;"""infravision,nonflammable,smoldering_eyes""";"""imp_elem_fire,short_breath"""
+doppler;"""Dopplers""";;2;0;0;0;0;60;0;;3;2;1;-3;-3;;;;;;;;;;;;;;;;;;;;;;;"""darkvision,polymorph""";"""bland_face"""
+fairy;"""Fairies""";;0,5;0;0;0;0;300;0;3;;6;;-5;-3;;;;;;;;;;;;;;;;;;;;;;;"""fae_blood,flutterers,pretty""";"""squishy,very_small"""
+giant;"""Giants""";;3;0;1;0;0,5;80;0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"""resilient,hyperthermic,heavy_lifting,disproportionate""";"""overpriced,clumsy"""
+geleton;"""Geleton""";;1,5;1;0;0;1;60;0;;;;-2;-3;;;;;;;-10;-10;-10;;;;;;;;;;;;;;;"""unreactive,swallow,nuclear,mutative""";"""flabby"""

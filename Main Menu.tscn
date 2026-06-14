@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://6t2smoq2wxxc"]
+
+[ext_resource type="Texture2D" uid="uid://ddfge34eohcqs" path="res://Assets/main menu images/tomas-muir-petrifiedtreeskeyframe1.jpg" id="1_dvdtt"]
+[ext_resource type="Texture2D" uid="uid://bbqnt5xanh44h" path="res://Assets/main menu images/Logo2.png" id="3_12kdf"]
+[ext_resource type="FontFile" uid="uid://cuihenec4ebxd" path="res://Fonts/Runavess Demo.otf" id="3_xwd2w"]
+[ext_resource type="PackedScene" uid="uid://yo77vqucchmd" path="res://Templates/button_template.tscn" id="4_xwd2w"]
+[ext_resource type="Texture2D" uid="uid://30sl5pubhsna" path="res://Assets/main menu images/party1.jpg" id="5_ht6vt"]
+[ext_resource type="Texture2D" uid="uid://cvgxjgk4mpp6w" path="res://Assets/main menu images/javier-charro-coveri-vii-final-copia.jpg" id="5_wfgb2"]
+[ext_resource type="Texture2D" uid="uid://di1uqou2jo4pr" path="res://Assets/main menu images/f6331cc8a653392d59a333baf8a38cbc.jpg" id="6_wfgb2"]
+[ext_resource type="Texture2D" uid="uid://b1yqq3k2xbxgj" path="res://Assets/main menu images/64df47dd43a4e104daf351e52085c914.jpg" id="8_bcalf"]
+[ext_resource type="Texture2D" uid="uid://bs5nu8r0o1bte" path="res://Assets/main menu images/32c6d357caa904e5b2c3f0ed0386739c.jpg" id="9_bcalf"]
+[ext_resource type="PackedScene" uid="uid://iplcjn8ckf5q" path="res://Templates/return_template.tscn" id="10_6viy2"]
+[ext_resource type="Texture2D" uid="uid://jaj0f3no0jfd" path="res://Assets/button textures/back.png" id="11_4gws7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvdtt"]
+texture = ExtResource("1_dvdtt")
+modulate_color = Color(0.843185, 0.8431834, 0.8431837, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4gws7"]
+texture = ExtResource("5_ht6vt")
+modulate_color = Color(0.6452097, 0.6452098, 0.6452097, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u78o4"]
+texture = ExtResource("5_ht6vt")
+modulate_color = Color(0.37413922, 0.37413928, 0.37413916, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwd2w"]
+texture = ExtResource("5_wfgb2")
+region_rect = Rect2(376.54443, 0, 1027.4556, 1800)
+modulate_color = Color(0.6550534, 0.6550533, 0.65505326, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wlsky"]
+texture = ExtResource("5_wfgb2")
+region_rect = Rect2(376.54443, 0, 1027.4556, 1800)
+modulate_color = Color(0.43519205, 0.43519235, 0.43519217, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfgb2"]
+texture = ExtResource("5_wfgb2")
+region_rect = Rect2(376.54443, 0, 1027.4556, 1800)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ht6vt"]
+texture = ExtResource("6_wfgb2")
+region_rect = Rect2(106.09265, -0.26956177, 554.99475, 1005.26953)
+modulate_color = Color(0.6452094, 0.6452099, 0.6452095, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bcalf"]
+texture = ExtResource("6_wfgb2")
+region_rect = Rect2(106.09265, -0.26956177, 554.99475, 1005.26953)
+modulate_color = Color(0.43211, 0.43211034, 0.43211013, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6viy2"]
+texture = ExtResource("6_wfgb2")
+region_rect = Rect2(106.09265, -0.26956177, 554.99475, 1005.26953)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whf7w"]
+texture = ExtResource("8_bcalf")
+region_rect = Rect2(21.851563, 0, 622.03076, 1200)
+modulate_color = Color(0.69799274, 0.69799274, 0.69799274, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gteid"]
+texture = ExtResource("8_bcalf")
+region_rect = Rect2(21.851563, 0, 622.03076, 1200)
+modulate_color = Color(0.49747366, 0.49747372, 0.49747354, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cq47v"]
+texture = ExtResource("8_bcalf")
+region_rect = Rect2(21.851563, 0, 622.03076, 1200)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7c0qk"]
+texture = ExtResource("9_bcalf")
+modulate_color = Color(0.69799274, 0.69799274, 0.69799274, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_buhl0"]
+texture = ExtResource("9_bcalf")
+modulate_color = Color(0.44445664, 0.44445676, 0.44445637, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0q8yv"]
+texture = ExtResource("9_bcalf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qvsc"]
+texture = ExtResource("11_4gws7")
+modulate_color = Color(1, 1, 1, 0.34300002)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vchbk"]
+texture = ExtResource("11_4gws7")
+
+[node name="Opening Page" type="Control" unique_id=585282404]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="BG1" type="Panel" parent="." unique_id=1268526937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.999996
+offset_right = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dvdtt")
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="CanvasGroup" parent="." unique_id=107876635]
+position = Vector2(174.99998, -53)
+scale = Vector2(0.8, 0.62)
+
+[node name="Iron Dust" type="TextureRect" parent="Logo" unique_id=1009628845]
+offset_left = -593.8462
+offset_top = -218.00003
+offset_right = 1775.1538
+offset_bottom = 794.0
+scale = Vector2(0.3, 0.3)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("3_12kdf")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tales Of" type="Label" parent="Logo" unique_id=294406909]
+offset_left = 350.76935
+offset_top = 370.0
+offset_right = 570.76935
+offset_bottom = 450.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_colors/font_outline_color = Color(0.29778755, 0.09471529, 0.03488466, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_xwd2w")
+theme_override_font_sizes/font_size = 60
+text = "Tales of"
+metadata/_edit_use_anchors_ = true
+
+[node name="ArKadurn" type="Label" parent="Logo" unique_id=1603043082]
+offset_left = 559.99994
+offset_top = 360.0
+offset_right = 962.99994
+offset_bottom = 475.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_colors/font_outline_color = Color(0.29778755, 0.09471529, 0.03488466, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_xwd2w")
+theme_override_font_sizes/font_size = 100
+text = "Ar'Kadurn"
+metadata/_edit_use_anchors_ = true
+
+[node name="ajoute bouton back" type="Node" parent="." unique_id=1513194299]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=299483631]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.0
+offset_top = -88.0
+offset_right = 573.0
+offset_bottom = 312.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+metadata/_edit_lock_ = true
+
+[node name="World" parent="HBoxContainer" unique_id=855110840 instance=ExtResource("4_xwd2w")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_4gws7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_u78o4")
+
+[node name="Races" parent="HBoxContainer" unique_id=1851789960 instance=ExtResource("4_xwd2w")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_xwd2w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wlsky")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wfgb2")
+text = "Races"
+
+[node name="Classes" parent="HBoxContainer" unique_id=245465652 instance=ExtResource("4_xwd2w")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_ht6vt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bcalf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6viy2")
+text = "Classes"
+
+[node name="Crafts" parent="HBoxContainer" unique_id=1056972975 instance=ExtResource("4_xwd2w")]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_whf7w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gteid")
+theme_override_styles/hover = SubResource("StyleBoxTexture_cq47v")
+text = "Crafts"
+
+[node name="Characters" parent="HBoxContainer" unique_id=1829510488 instance=ExtResource("4_xwd2w")]
+layout_mode = 2
+size_flags_stretch_ratio = 1.2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_7c0qk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_buhl0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0q8yv")
+text = "Characters"
+
+[node name="retour" parent="." unique_id=1142448160 instance=ExtResource("10_6viy2")]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 125.0
+offset_bottom = 70.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8qvsc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vchbk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vchbk")

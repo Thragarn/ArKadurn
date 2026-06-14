@@ -1,0 +1,89 @@
+{
+  "revenge": {
+    "description": "If anyone attacks the ogre by surprise, be it a sneak attack or an ally that missed their target, the ogre's rage activates and he must attack them back at least once. (once a real game, everyone except the responsible becomes invisible and the ogre involuntarily moves towards them)",
+    "effects": [
+      {"grants_abilities": ["revengeful"]}
+    ]
+  },
+  "small": {
+    "description": "Gremlins can't use great weapons. Versatile weapons are two-handed to them.",
+    "effects": [
+      {"flag": "smol"}
+    ]
+  },
+  "unurban": {
+    "description": "Can't find their way in a town, even with a map. (in-game map absent)",
+    "effects": [
+      {"flag": "unurban"}
+    ]
+  },
+  "imposed_element_earth": {
+    "description": "All trolls are earthbenders by default, in addition to another element.",
+    "effects": [
+      {"flag": "imp_elem_earth"}
+    ]
+  },
+  "big_bellied": {
+    "description": "Everything in a troll's anatomy makes them heavier. [b]+{weight_mod}[/b] Weight Value.",
+    "effects": [
+      {"modifier": "weight_mod", "value": 4}
+    ]
+  },
+  "imposed_element_air": {
+    "description": "All jinn are airbenders by default, in addition to another element.",
+    "effects": [
+      {"flag": "imp_elem_air"}
+    ]
+  },
+  "imposed_element_fire": {
+    "description": "All tieflings are firebenders by default, in addition to another element.",
+    "effects": [
+      {"flag": "imp_elem_fire"}
+    ]
+  },
+  "short_breath": {
+    "description": "A tiefling's burning metabolism needs lots of air. Disadvantage on suffocation resistance rolls.",
+    "effects": [
+      {"stat": "phy_RR_suffoc_advantage", "value": -1}
+    ]
+  },
+  "bland_face": {
+    "description": "Doppler faces resemble each other too much. They can be neither ugly nor pretty, with even long-time friends and family members finding it hard to recognize their true face.",
+    "effects": [
+      {"flag": "bland_face"}
+    ]
+  },
+  "squishy": {
+    "description": "Fairies have similar HP levels to a potato chip, suffering [b]-5 HP per level[/b].",
+    "effects": [
+      {"modifier": "hp_bonus", "formula": "-5*{g_lvl}"}
+    ]
+  },
+  "very_small": {
+    "description": "One handed weapons are great weapons to fairies. Anything else is similar to wielding a tree.",
+    "effects": [
+      {"flag": "tiny"}
+    ]
+  },
+  "overpriced": {
+    "description": "Can't loot non-giant armor. Armor prices are tripled.",
+    "effects": [
+      {"flag": "hugh_mungus"}
+    ]
+  },
+  "clumsy": {
+    "description": "A giant's massive frame is a big target that takes long to accelerate, rendering them completely unable to dodge. Disadvantage to stealth and acrobatics rolls.",
+    "effects": [
+      {"modifier": "dodge_armor_mult", "value": 0},
+      {"modifier": "stealth_advantage", "value": -1},
+      {"modifier": "acrobatics_advantage", "value": -1}
+    ]
+  },
+  "flabby": {
+    "description": "Max carry weight and hand to hand damage are halved because of the soft body of a geleton.",
+    "effects": [
+      {"modifier": "carry_capacity_mult", "value": 0.5},
+      {"modifier": "h2h_dmg_mult", "value": 0.5}
+    ]
+  }
+}

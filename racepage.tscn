@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://ba33famnyiwv8"]
+
+[ext_resource type="Texture2D" uid="uid://cvqyw2dsok5bo" path="res://Assets/bg elements/yami-yami-1.jpg" id="1_b8ifu"]
+[ext_resource type="Script" uid="uid://bxe8cyouar2lb" path="res://racepage.gd" id="1_f5sdv"]
+[ext_resource type="Texture2D" uid="uid://bxfxp7sbgvkhv" path="res://Assets/race menu images/barreaux.png" id="2_k3xle"]
+[ext_resource type="Texture2D" uid="uid://coa6i62uqd1y3" path="res://Assets/race menu images/Combined frames.png" id="2_kiewt"]
+[ext_resource type="Texture2D" uid="uid://domccaypeajec" path="res://Assets/race menu images/BannerHD FINAL.png" id="4_73p5f"]
+[ext_resource type="Texture2D" uid="uid://b2sne6jgqkfy7" path="res://Assets/race menu images/01-Poetcore inspired tarot card 2.png" id="5_73p5f"]
+[ext_resource type="FontFile" uid="uid://dk1mgmaxatsv5" path="res://Fonts/GraenMetal-Regular.otf" id="6_6sci0"]
+[ext_resource type="FontFile" uid="uid://cdcur7rg5m1pf" path="res://Fonts/PowerofDragon-Regular.ttf" id="7_f5sdv"]
+[ext_resource type="FontFile" uid="uid://bb3og1tu2difv" path="res://Fonts/Heroking-Regular.ttf" id="9_8wlf1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
+texture = ExtResource("1_b8ifu")
+modulate_color = Color(0.8638137, 0.86381376, 0.8638137, 1)
+
+[sub_resource type="Gradient" id="Gradient_b8ifu"]
+offsets = PackedFloat32Array(0.40463918, 1)
+colors = PackedColorArray(0, 0, 0, 0.85200006, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k3xle"]
+gradient = SubResource("Gradient_b8ifu")
+
+[sub_resource type="Theme" id="Theme_8wlf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_comop"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkkso"]
+bg_color = Color(0, 0, 0, 0.55200005)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tibr"]
+bg_color = Color(0, 0, 0, 0.314)
+
+[node name="Control" type="Control" unique_id=1210271518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f5sdv")
+metadata/_edit_lock_ = true
+
+[node name="bg" type="Panel" parent="." unique_id=887690729]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.8689644
+anchor_bottom = 0.86944443
+offset_right = 176.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_k3xle")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="black grad" type="TextureRect" parent="." unique_id=1984000502]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1035.0
+offset_right = -205.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_k3xle")
+metadata/_edit_lock_ = true
+
+[node name="selection" type="CanvasGroup" parent="." unique_id=1048020640]
+metadata/_edit_lock_ = true
+
+[node name="frames" type="TextureRect" parent="selection" unique_id=1373801730]
+offset_top = 1.0000038
+offset_right = 816.0
+offset_bottom = 2246.0
+scale = Vector2(0.29, 0.32)
+texture = ExtResource("2_kiewt")
+
+[node name="pillar" type="TextureRect" parent="selection" unique_id=2095754105]
+offset_left = 224.00002
+offset_top = -21.0
+offset_right = 458.0
+offset_bottom = 2907.0
+scale = Vector2(0.257, 0.257)
+texture = ExtResource("2_k3xle")
+
+[node name="race image" type="CanvasGroup" parent="." unique_id=1706841155]
+metadata/_edit_lock_ = true
+
+[node name="banner" type="TextureRect" parent="race image" unique_id=1352686972]
+offset_left = 860.0
+offset_top = 17.0
+offset_right = 2048.5715
+offset_bottom = 1827.5264
+scale = Vector2(0.35, 0.38)
+texture = ExtResource("4_73p5f")
+
+[node name="TextureRect" type="TextureRect" parent="race image" unique_id=1635597014]
+offset_left = 925.00006
+offset_top = 76.00001
+offset_right = 2397.0
+offset_bottom = 2712.0
+scale = Vector2(0.194, 0.206)
+texture = ExtResource("5_73p5f")
+
+[node name="Curses" type="Label" parent="." unique_id=1866054256]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 460.0
+offset_right = 165.0
+offset_bottom = 520.0
+scale = Vector2(1.2, 1)
+theme_override_colors/font_color = Color(0.23698714, 0.049515486, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.6839029, 0.073967285, 0, 0.35686275)
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("6_6sci0")
+theme_override_font_sizes/font_size = 36
+text = "Curses"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Races" type="Label" parent="." unique_id=681833775]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 28.0
+offset_right = 160.0
+offset_bottom = 111.0
+scale = Vector2(1.1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.595)
+theme_override_colors/font_outline_color = Color(0.15594886, 0.25766784, 0.4565437, 0.70400006)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("7_f5sdv")
+theme_override_font_sizes/font_size = 48
+text = "Races"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="RaceTemplateButton" type="Button" parent="." unique_id=908125626]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -845.0
+offset_top = -260.0
+offset_right = -662.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8wlf1")
+theme_override_colors/font_pressed_color = Color(1, 1, 0.43917835, 1)
+theme_override_colors/font_outline_color = Color(0.03137255, 0.05882353, 0.08627451, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("9_8wlf1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_comop")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qkkso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1tibr")
+text = "Human"
+
+[node name="RaceScroller" type="ScrollContainer" parent="." unique_id=22420221]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 116.0
+offset_right = 210.0
+offset_bottom = 383.0
+horizontal_scroll_mode = 0
+
+[node name="racebuttons" type="VBoxContainer" parent="RaceScroller" unique_id=825177870]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=567392831]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

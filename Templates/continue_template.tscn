@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ctbcc1no5phkj"]
+
+[ext_resource type="Texture2D" uid="uid://de5knyrg68jfd" path="res://Assets/button textures/continue.png" id="1_r6dw5"]
+[ext_resource type="Script" uid="uid://m5kbttxqqia6" path="res://button.gd" id="2_n1fkq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cv8i7"]
+texture = ExtResource("1_r6dw5")
+modulate_color = Color(1, 1, 1, 0.8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_73s6y"]
+texture = ExtResource("1_r6dw5")
+
+[node name="Continue" type="Button" unique_id=129921402]
+offset_left = 953.9308
+offset_top = 579.4798
+offset_right = 1096.9308
+offset_bottom = 615.4798
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_cv8i7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_73s6y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_73s6y")
+script = ExtResource("2_n1fkq")
+fade_delay = 1.8
+fade_time = 0.8
+pressed_scale = Vector2(0.95, 0.95)

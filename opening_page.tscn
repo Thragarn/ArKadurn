@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b64ud1m61y2lg"]
+
+[ext_resource type="Texture2D" uid="uid://ddfge34eohcqs" path="res://Assets/main menu images/tomas-muir-petrifiedtreeskeyframe1.jpg" id="1_i4we0"]
+[ext_resource type="Script" uid="uid://b4u65vi8yjmha" path="res://opening_page.gd" id="1_tmais"]
+[ext_resource type="Texture2D" uid="uid://bbqnt5xanh44h" path="res://Assets/main menu images/Logo2.png" id="2_5hhq0"]
+[ext_resource type="FontFile" uid="uid://cuihenec4ebxd" path="res://Fonts/Runavess Demo.otf" id="3_inec3"]
+[ext_resource type="PackedScene" uid="uid://ctbcc1no5phkj" path="res://Templates/continue_template.tscn" id="5_inec3"]
+[ext_resource type="Texture2D" uid="uid://de5knyrg68jfd" path="res://Assets/button textures/continue.png" id="6_tmais"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmais"]
+texture = ExtResource("1_i4we0")
+modulate_color = Color(0.843185, 0.8431834, 0.8431837, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t8d01"]
+texture = ExtResource("6_tmais")
+modulate_color = Color(1, 1, 1, 0.56700003)
+
+[node name="Opening Page" type="Control" unique_id=1787652857]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+script = ExtResource("1_tmais")
+metadata/_edit_lock_ = true
+
+[node name="BG1" type="Panel" parent="." unique_id=878422369]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.999996
+offset_right = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_tmais")
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="CanvasGroup" parent="BG1" unique_id=1321960391]
+position = Vector2(7.2727184, 14)
+scale = Vector2(1.0502002, 1.0716506)
+
+[node name="Iron Dust" type="TextureRect" parent="BG1/Logo" unique_id=1585694319]
+offset_left = -593.8462
+offset_top = -218.00003
+offset_right = 1775.1538
+offset_bottom = 794.0
+scale = Vector2(0.3, 0.3)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_5hhq0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Tales Of" type="Label" parent="BG1/Logo" unique_id=1117036089]
+offset_left = 350.76935
+offset_top = 370.0
+offset_right = 570.76935
+offset_bottom = 450.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_colors/font_outline_color = Color(0.29778755, 0.09471529, 0.03488466, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_inec3")
+theme_override_font_sizes/font_size = 60
+text = "Tales of"
+metadata/_edit_use_anchors_ = true
+
+[node name="ArKadurn" type="Label" parent="BG1/Logo" unique_id=2045497167]
+offset_left = 559.99994
+offset_top = 360.0
+offset_right = 962.99994
+offset_bottom = 475.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.78039217)
+theme_override_colors/font_outline_color = Color(0.29778755, 0.09471529, 0.03488466, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_inec3")
+theme_override_font_sizes/font_size = 100
+text = "Ar'Kadurn"
+metadata/_edit_use_anchors_ = true
+
+[node name="Continue" parent="." unique_id=129921402 instance=ExtResource("5_inec3")]
+layout_mode = 0
+offset_left = 1050.0001
+offset_top = 634.9999
+offset_right = 1193.0001
+offset_bottom = 670.9999
+theme_override_styles/normal = SubResource("StyleBoxTexture_t8d01")
+
+[node name="faderect" type="ColorRect" parent="." unique_id=1032665343]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[editable path="Continue"]
