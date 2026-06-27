@@ -3,15 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://jaj0f3no0jfd" path="res://Assets/button textures/back.png" id="1_s2r6k"]
 [ext_resource type="Script" uid="uid://cf4tfaolxxv7r" path="res://Templates/back_first.gd" id="2_tp0l2"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tp0l2"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qvsc"]
 texture = ExtResource("1_s2r6k")
-modulate_color = Color(1, 1, 1, 0.92)
+modulate_color = Color(1, 1, 1, 0.34300002)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vchbk"]
+texture = ExtResource("1_s2r6k")
 
 [node name="retour" type="Button" unique_id=1142448160]
 offset_left = 29.0
 offset_top = 28.0
 offset_right = 114.0
-offset_bottom = 60.0
+offset_bottom = 58.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_styles/normal = SubResource("StyleBoxTexture_tp0l2")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8qvsc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_vchbk")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vchbk")
 script = ExtResource("2_tp0l2")

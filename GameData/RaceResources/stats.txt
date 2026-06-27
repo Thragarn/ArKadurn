@@ -1,0 +1,7 @@
+label	full_name
+intel	"""intelligence"""
+charis	"""charisma"""
+psy	"""psyche"""
+agi	"""agility"""
+strn	"""strength"""
+cnst	"""constitution"""

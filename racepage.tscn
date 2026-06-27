@@ -7,8 +7,21 @@
 [ext_resource type="Texture2D" uid="uid://domccaypeajec" path="res://Assets/race menu images/BannerHD FINAL.png" id="4_73p5f"]
 [ext_resource type="Texture2D" uid="uid://b2sne6jgqkfy7" path="res://Assets/race menu images/01-Poetcore inspired tarot card 2.png" id="5_73p5f"]
 [ext_resource type="FontFile" uid="uid://dk1mgmaxatsv5" path="res://Fonts/GraenMetal-Regular.otf" id="6_6sci0"]
+[ext_resource type="Texture2D" uid="uid://c3ch8mop8wckj" path="res://Assets/button textures/male_dim.png" id="7_1tibr"]
 [ext_resource type="FontFile" uid="uid://cdcur7rg5m1pf" path="res://Fonts/PowerofDragon-Regular.ttf" id="7_f5sdv"]
+[ext_resource type="Texture2D" uid="uid://ca5ctk34pkul7" path="res://Assets/button textures/female_dim.png" id="8_u1joi"]
 [ext_resource type="FontFile" uid="uid://bb3og1tu2difv" path="res://Fonts/Heroking-Regular.ttf" id="9_8wlf1"]
+[ext_resource type="FontFile" uid="uid://cuihenec4ebxd" path="res://Fonts/Runavess Demo.otf" id="9_qeios"]
+[ext_resource type="Script" uid="uid://toydnxjtjmlo" path="res://race_template_button.gd" id="10_comop"]
+[ext_resource type="Script" uid="uid://cqxjycp5vqskw" path="res://race_image.gd" id="10_l0g61"]
+[ext_resource type="Texture2D" uid="uid://ksxw4iwgegg3" path="res://Assets/button textures/male_glow.png" id="14_gsb4p"]
+[ext_resource type="ButtonGroup" uid="uid://bfujvukr7ldeb" path="res://Templates/genderbuttons.tres" id="14_l0g61"]
+[ext_resource type="Texture2D" uid="uid://db3tfibhpdcch" path="res://Assets/button textures/female_glow.png" id="15_l0g61"]
+[ext_resource type="FontFile" uid="uid://biv46q8t2cbwo" path="res://Fonts/kynetic-demo.black.ttf" id="18_frv2e"]
+[ext_resource type="FontFile" uid="uid://ctqrhqm177b72" path="res://Fonts/BerkshireSwash-Regular.ttf" id="18_tldqt"]
+[ext_resource type="PackedScene" uid="uid://iplcjn8ckf5q" path="res://Templates/return_template.tscn" id="19_tldqt"]
+[ext_resource type="Texture2D" uid="uid://c1pgxs67a7as2" path="res://Assets/button textures/emptypixel.png" id="21_jgrl7"]
+[ext_resource type="Script" uid="uid://b80ks7n47gid1" path="res://race_options.gd" id="21_voise"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
 texture = ExtResource("1_b8ifu")
@@ -32,6 +45,36 @@ bg_color = Color(0, 0, 0, 0.55200005)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1tibr"]
 bg_color = Color(0, 0, 0, 0.314)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc7ir"]
+bg_color = Color(0.18631536, 0.16409835, 0.11207495, 0.48000002)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk42j"]
+bg_color = Color(0.83, 0.74284995, 0.581, 0.89411765)
+
+[sub_resource type="Theme" id="Theme_voise"]
+PopupMenu/colors/font_color = Color(0, 0, 0, 0.8509804)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0, 0.92)
+PopupMenu/constants/h_separation = 20
+PopupMenu/font_sizes/font_size = 19
+PopupMenu/fonts/font = ExtResource("18_tldqt")
+PopupMenu/icons/checked = ExtResource("21_jgrl7")
+PopupMenu/icons/checked_disabled = ExtResource("21_jgrl7")
+PopupMenu/icons/radio_checked = ExtResource("21_jgrl7")
+PopupMenu/icons/radio_checked_disabled = ExtResource("21_jgrl7")
+PopupMenu/icons/radio_unchecked = ExtResource("21_jgrl7")
+PopupMenu/icons/radio_unchecked_disabled = ExtResource("21_jgrl7")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_fc7ir")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_tk42j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_voise"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgrl7"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s76pq"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
 [node name="Control" type="Control" unique_id=1210271518]
 layout_mode = 3
 anchors_preset = 15
@@ -40,6 +83,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5sdv")
+bold_word_color = Color(1, 0.8921665, 0.34064347, 1)
 metadata/_edit_lock_ = true
 
 [node name="bg" type="Panel" parent="." unique_id=887690729]
@@ -69,6 +113,43 @@ grow_vertical = 2
 texture = SubResource("GradientTexture1D_k3xle")
 metadata/_edit_lock_ = true
 
+[node name="RaceTemplateButton" type="Button" parent="." unique_id=908125626]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -845.0
+offset_top = -260.0
+offset_right = -662.0
+offset_bottom = -218.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8wlf1")
+theme_override_colors/font_color = Color(0.9577182, 0.9577182, 0.9577181, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0.43917835, 1)
+theme_override_colors/font_outline_color = Color(0.03137255, 0.05882353, 0.08627451, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("9_8wlf1")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_comop")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qkkso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1tibr")
+text = "Human"
+script = ExtResource("10_comop")
+hover_scale = Vector2(1.15, 1.15)
+click_scale = Vector2(0.92, 0.92)
+anim_time = 0.12
+
+[node name="retour" parent="." unique_id=1142448160 instance=ExtResource("19_tldqt")]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 20.0
+offset_right = 385.0
+offset_bottom = 50.0
+target_scene = "res://Main Menu.tscn"
+
 [node name="selection" type="CanvasGroup" parent="." unique_id=1048020640]
 metadata/_edit_lock_ = true
 
@@ -78,6 +159,7 @@ offset_right = 816.0
 offset_bottom = 2246.0
 scale = Vector2(0.29, 0.32)
 texture = ExtResource("2_kiewt")
+metadata/_edit_lock_ = true
 
 [node name="pillar" type="TextureRect" parent="selection" unique_id=2095754105]
 offset_left = 224.00002
@@ -86,28 +168,9 @@ offset_right = 458.0
 offset_bottom = 2907.0
 scale = Vector2(0.257, 0.257)
 texture = ExtResource("2_k3xle")
-
-[node name="race image" type="CanvasGroup" parent="." unique_id=1706841155]
 metadata/_edit_lock_ = true
 
-[node name="banner" type="TextureRect" parent="race image" unique_id=1352686972]
-offset_left = 860.0
-offset_top = 17.0
-offset_right = 2048.5715
-offset_bottom = 1827.5264
-scale = Vector2(0.35, 0.38)
-texture = ExtResource("4_73p5f")
-
-[node name="TextureRect" type="TextureRect" parent="race image" unique_id=1635597014]
-offset_left = 925.00006
-offset_top = 76.00001
-offset_right = 2397.0
-offset_bottom = 2712.0
-scale = Vector2(0.194, 0.206)
-texture = ExtResource("5_73p5f")
-
-[node name="Curses" type="Label" parent="." unique_id=1866054256]
-layout_mode = 0
+[node name="Curses" type="Label" parent="selection" unique_id=1866054256]
 offset_left = 48.0
 offset_top = 460.0
 offset_right = 165.0
@@ -124,8 +187,7 @@ text = "Curses"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="Races" type="Label" parent="." unique_id=681833775]
-layout_mode = 0
+[node name="Races" type="Label" parent="selection" unique_id=681833775]
 offset_left = 72.0
 offset_top = 28.0
 offset_right = 160.0
@@ -143,39 +205,15 @@ text = "Races"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="RaceTemplateButton" type="Button" parent="." unique_id=908125626]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -845.0
-offset_top = -260.0
-offset_right = -662.0
-offset_bottom = -218.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_8wlf1")
-theme_override_colors/font_pressed_color = Color(1, 1, 0.43917835, 1)
-theme_override_colors/font_outline_color = Color(0.03137255, 0.05882353, 0.08627451, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("9_8wlf1")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_comop")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qkkso")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1tibr")
-text = "Human"
-
-[node name="RaceScroller" type="ScrollContainer" parent="." unique_id=22420221]
-layout_mode = 0
+[node name="RaceScroller" type="ScrollContainer" parent="selection" unique_id=22420221]
 offset_left = 27.0
 offset_top = 116.0
 offset_right = 210.0
 offset_bottom = 383.0
 horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
 
-[node name="racebuttons" type="VBoxContainer" parent="RaceScroller" unique_id=825177870]
+[node name="racebuttons" type="VBoxContainer" parent="selection/RaceScroller" unique_id=825177870]
 unique_name_in_owner = true
 layout_mode = 2
 
@@ -183,3 +221,127 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="race image" type="CanvasGroup" parent="." unique_id=1706841155]
+script = ExtResource("10_l0g61")
+fade_duration = 0.75
+metadata/_edit_lock_ = true
+
+[node name="banner" type="TextureRect" parent="race image" unique_id=1352686972]
+offset_left = 851.00006
+offset_top = 17.0
+offset_right = 2096.7139
+offset_bottom = 1827.5264
+scale = Vector2(0.35, 0.38)
+texture = ExtResource("4_73p5f")
+metadata/_edit_lock_ = true
+
+[node name="trimmings" type="TextureRect" parent="race image" unique_id=1635597014]
+offset_left = 902.9999
+offset_top = 80.0
+offset_right = 2573.0
+offset_bottom = 2769.9998
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_73p5f")
+metadata/_edit_lock_ = true
+
+[node name="MaleDim" type="Sprite2D" parent="race image" unique_id=774808194]
+position = Vector2(941.5, 584.5)
+scale = Vector2(0.04882301, 0.048611194)
+texture = ExtResource("7_1tibr")
+metadata/_edit_lock_ = true
+
+[node name="FemaleDim" type="Sprite2D" parent="race image" unique_id=1143130319]
+position = Vector2(1198.7422, 584.75006)
+scale = Vector2(0.049, 0.049)
+texture = ExtResource("8_u1joi")
+metadata/_edit_lock_ = true
+
+[node name="male_button" type="TextureButton" parent="race image" unique_id=944406023]
+offset_left = 916.0
+offset_top = 560.00006
+offset_right = 1958.0
+offset_bottom = 1568.0
+scale = Vector2(0.049, 0.049)
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("14_l0g61")
+texture_normal = ExtResource("14_gsb4p")
+
+[node name="female_button" type="TextureButton" parent="race image" unique_id=1348870765]
+offset_left = 1173.0
+offset_top = 560.0
+offset_right = 2214.0
+offset_bottom = 1568.0
+scale = Vector2(0.049562532, 0.049317997)
+toggle_mode = true
+button_group = ExtResource("14_l0g61")
+texture_normal = ExtResource("15_l0g61")
+
+[node name="Affichage" type="CanvasGroup" parent="." unique_id=1602149019]
+
+[node name="RaceTitle" type="Label" parent="Affichage" unique_id=1844061682]
+offset_left = 485.0
+offset_top = 26.000002
+offset_right = 715.0
+offset_bottom = 118.0
+scale = Vector2(1.039403, 1.039403)
+theme_override_fonts/font = ExtResource("9_qeios")
+theme_override_font_sizes/font_size = 80
+text = "Human"
+horizontal_alignment = 1
+
+[node name="StatScroller" type="ScrollContainer" parent="Affichage" unique_id=367124892]
+offset_left = 313.0
+offset_top = 140.0
+offset_right = 875.0
+offset_bottom = 396.0
+
+[node name="Description" type="RichTextLabel" parent="Affichage/StatScroller" unique_id=473307579]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("18_frv2e")
+theme_override_fonts/bold_font = ExtResource("18_tldqt")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 20
+horizontal_alignment = 3
+
+[node name="RaceOptions" type="OptionButton" parent="." unique_id=292354564]
+layout_mode = 0
+offset_left = 998.0
+offset_top = 522.0
+offset_right = 1142.0
+offset_bottom = 551.0
+theme = SubResource("Theme_voise")
+theme_override_colors/font_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_colors/font_focus_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_colors/font_pressed_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_colors/font_hover_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_colors/font_disabled_color = Color(0.05109597, 0.05109618, 0.051096022, 1)
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_voise")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jgrl7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s76pq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_voise")
+alignment = 1
+script = ExtResource("21_voise")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2115197894]
+visible = false
+layout_mode = 0
+offset_left = 320.0
+offset_top = 145.0
+offset_right = 870.0
+offset_bottom = 709.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("18_frv2e")
+theme_override_fonts/bold_font = ExtResource("18_tldqt")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 21
+bbcode_enabled = true
+text = "[b]Lorem ipsum[/b] dolor sit amet, consectetur adipiscing elit. Cras sed nisl ac risus vestibulum elementum. Phasellus porta eleifend risus ut congue. Sed sit amet tellus pellentesque, congue ex ut, blandit arcu. Proin quis ante felis. Quisque vel justo sed ante bibendum vestibulum eu vel lectus. Nulla facilisi. Sed rutrum vitae orci at rutrum. Sed non magna in elit mollis ullamcorper. Curabitur sit amet ex nec diam pretium molestie. Proin varius magna quis dolor euismod, sed ultrices magna fermentum. Nullam viverra, libero in scelerisque viverra, magna orci porttitor mauris, quis venenatis risus est mattis metus. Donec at congue massa.
+
+Duis nec auctor ante. Phasellus a purus vitae lacus tempus tristique. Nulla ultricies et nisi tempus dictum. In sed ultricies urna. Donec id ante dui. Sed quis finibus magna. Sed at luctus ipsum, sit amet vestibulum magna. Sed accumsan lorem sit amet leo tristique suscipit. Mauris lobortis ipsum ac congue laoreet. Cras egestas sapien sit amet est sagittis, eget pharetra nisl pharetra. Cras fringilla enim a nisl ornare, eget vulputate velit rhoncus. Mauris eu quam sit amet mi rutrum efficitur. Sed sollicitudin lorem ligula, ut scelerisque est rhoncus id. Donec vulputate fermentum vestibulum. Fusce sollicitudin et turpis vitae porttitor. Praesent feugiat fringilla ipsum ac accumsan."
+horizontal_alignment = 3

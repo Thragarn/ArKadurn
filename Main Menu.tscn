@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://30sl5pubhsna" path="res://Assets/main menu images/party1.jpg" id="5_ht6vt"]
 [ext_resource type="Texture2D" uid="uid://cvgxjgk4mpp6w" path="res://Assets/main menu images/javier-charro-coveri-vii-final-copia.jpg" id="5_wfgb2"]
 [ext_resource type="Texture2D" uid="uid://di1uqou2jo4pr" path="res://Assets/main menu images/f6331cc8a653392d59a333baf8a38cbc.jpg" id="6_wfgb2"]
+[ext_resource type="PackedScene" uid="uid://ba33famnyiwv8" path="res://racepage.tscn" id="7_u78o4"]
 [ext_resource type="Texture2D" uid="uid://b1yqq3k2xbxgj" path="res://Assets/main menu images/64df47dd43a4e104daf351e52085c914.jpg" id="8_bcalf"]
 [ext_resource type="Texture2D" uid="uid://bs5nu8r0o1bte" path="res://Assets/main menu images/32c6d357caa904e5b2c3f0ed0386739c.jpg" id="9_bcalf"]
 [ext_resource type="PackedScene" uid="uid://iplcjn8ckf5q" path="res://Templates/return_template.tscn" id="10_6viy2"]
-[ext_resource type="Texture2D" uid="uid://jaj0f3no0jfd" path="res://Assets/button textures/back.png" id="11_4gws7"]
+[ext_resource type="Texture2D" uid="uid://cii74hyifum5i" path="res://Assets/button textures/homebuttonstripped.png" id="12_u78o4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvdtt"]
 texture = ExtResource("1_dvdtt")
@@ -78,11 +79,12 @@ modulate_color = Color(0.44445664, 0.44445676, 0.44445637, 1)
 texture = ExtResource("9_bcalf")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qvsc"]
-texture = ExtResource("11_4gws7")
-modulate_color = Color(1, 1, 1, 0.34300002)
+texture = ExtResource("12_u78o4")
+modulate_color = Color(1, 1, 1, 0.4)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vchbk"]
-texture = ExtResource("11_4gws7")
+texture = ExtResource("12_u78o4")
+modulate_color = Color(1, 1, 1, 0.85882354)
 
 [node name="Opening Page" type="Control" unique_id=585282404]
 layout_mode = 3
@@ -152,8 +154,6 @@ theme_override_font_sizes/font_size = 100
 text = "Ar'Kadurn"
 metadata/_edit_use_anchors_ = true
 
-[node name="ajoute bouton back" type="Node" parent="." unique_id=1513194299]
-
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=299483631]
 layout_mode = 1
 anchors_preset = 8
@@ -183,6 +183,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xwd2w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_wlsky")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wfgb2")
 text = "Races"
+target_scene = ExtResource("7_u78o4")
 
 [node name="Classes" parent="HBoxContainer" unique_id=245465652 instance=ExtResource("4_xwd2w")]
 layout_mode = 2
@@ -209,12 +210,14 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_buhl0")
 theme_override_styles/hover = SubResource("StyleBoxTexture_0q8yv")
 text = "Characters"
 
-[node name="retour" parent="." unique_id=1142448160 instance=ExtResource("10_6viy2")]
+[node name="Home" parent="." unique_id=1142448160 instance=ExtResource("10_6viy2")]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 125.0
-offset_bottom = 70.0
+offset_left = -526.99994
+offset_top = -691.99994
+offset_right = 719.00006
+offset_bottom = 808.00006
+scale = Vector2(0.05220546, 0.05220546)
 theme_override_styles/normal = SubResource("StyleBoxTexture_8qvsc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_vchbk")
 theme_override_styles/hover = SubResource("StyleBoxTexture_vchbk")
+pressed_scale = Vector2(0.048, 0.048)

@@ -8,7 +8,7 @@ var handicaps: Dictionary = {}
 func _ready() -> void:
 	load_json_database("res://GameData/RaceResources/assets.json", assets)
 	load_json_database("res://GameData/RaceResources/handicaps.json", handicaps)
-	load_race_csv("res://GameData/RaceResources/racescsv.csv")
+	load_race_txt("res://GameData/RaceResources/racestxt.txt")
 
 # 1. Standard JSON file loader
 func load_json_database(file_path: String, target_dict: Dictionary) -> void:
@@ -29,29 +29,34 @@ func load_json_database(file_path: String, target_dict: Dictionary) -> void:
 	else:
 		printerr("JSON Parse Error in ", file_path, " line ", json.get_error_line(), ": ", json.get_error_message())
 
-# 2. Advanced CSV Line-by-Line Loader
-func load_race_csv(file_path: String) -> void:
+# 2. Advanced Tab-Delimited TXT Line-by-Line Loader
+func load_race_txt(file_path: String) -> void:
 	if not FileAccess.file_exists(file_path):
-		printerr("CSV file not found: ", file_path)
+		printerr("TXT database file not found: ", file_path)
 		return
 		
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	
-	# Grab the header row to dynamically map column indices
-	var headers = file.get_csv_line(";")
-	if headers.size() == 0: return
+	# UPDATED: Grab the header row using tab delimiter "\t"
+	var raw_headers = file.get_csv_line("\t")
+	if raw_headers.size() == 0: return
+	
+	var headers: Array = []
+	for h in raw_headers:
+		headers.append(h.strip_edges().replace('"', ''))
 	
 	while not file.eof_reached():
-		var row = file.get_csv_line(";")
+		# UPDATED: Split lines using tab delimiter "\t"
+		var row = file.get_csv_line("\t")
 		if row.size() < headers.size() or row[0].strip_edges() == "": 
 			continue # Skip empty or corrupted lines
 			
 		var race_data = {}
-		var current_race_id = row[0].strip_edges()
+		var current_race_id = row[0].strip_edges().replace('"', '')
 		
 		# Map columns into a dictionary for clean variable access
 		for i in range(1, headers.size()):
-			var header_title = headers[i].strip_edges()
+			var header_title = headers[i]
 			var raw_cell_value = row[i].strip_edges()
 			
 			# Clean up outer string quotes left by spreadsheet exports
