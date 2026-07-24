@@ -3,7 +3,7 @@
     "description": "Humans earn [b]INT%[/b] extra evolution points, and [b]+{ep_creation_bonus}[/b] to starting evolution points.",
     "effects": [
       {"modifier": "ep_bonus", "formula": "{intel}"},
-      {"modifier": "ep_creation_bonus", "value": 30}
+      {"modifier": "ep_creation_bonus", "value": 20}
     ]
   },
   "passionate": {

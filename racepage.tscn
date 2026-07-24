@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://iplcjn8ckf5q" path="res://Templates/return_template.tscn" id="19_tldqt"]
 [ext_resource type="Texture2D" uid="uid://c1pgxs67a7as2" path="res://Assets/button textures/emptypixel.png" id="21_jgrl7"]
 [ext_resource type="Script" uid="uid://b80ks7n47gid1" path="res://race_options.gd" id="21_voise"]
+[ext_resource type="Shader" uid="uid://cxp0qmt5seo8m" path="res://racepage.gdshader" id="23_s76pq"]
+[ext_resource type="Texture2D" uid="uid://s3cse4kilx4p" path="res://Assets/race menu images/stampwhite.png" id="24_tk42j"]
+[ext_resource type="Script" uid="uid://bcvp50xfr86l6" path="res://portrait_display.gd" id="25_fc7ir"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
 texture = ExtResource("1_b8ifu")
@@ -74,6 +77,10 @@ bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s76pq"]
 bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk42j"]
+shader = ExtResource("23_s76pq")
+shader_parameter/mask_texture = ExtResource("24_tk42j")
 
 [node name="Control" type="Control" unique_id=1210271518]
 layout_mode = 3
@@ -217,11 +224,6 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=567392831]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="race image" type="CanvasGroup" parent="." unique_id=1706841155]
 script = ExtResource("10_l0g61")
 fade_duration = 0.75
@@ -328,20 +330,11 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_voise")
 alignment = 1
 script = ExtResource("21_voise")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2115197894]
-visible = false
+[node name="PortraitDisplay" type="TextureRect" parent="." unique_id=1010366554]
+material = SubResource("ShaderMaterial_tk42j")
 layout_mode = 0
-offset_left = 320.0
-offset_top = 145.0
-offset_right = 870.0
-offset_bottom = 709.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("18_frv2e")
-theme_override_fonts/bold_font = ExtResource("18_tldqt")
-theme_override_font_sizes/normal_font_size = 15
-theme_override_font_sizes/bold_font_size = 21
-bbcode_enabled = true
-text = "[b]Lorem ipsum[/b] dolor sit amet, consectetur adipiscing elit. Cras sed nisl ac risus vestibulum elementum. Phasellus porta eleifend risus ut congue. Sed sit amet tellus pellentesque, congue ex ut, blandit arcu. Proin quis ante felis. Quisque vel justo sed ante bibendum vestibulum eu vel lectus. Nulla facilisi. Sed rutrum vitae orci at rutrum. Sed non magna in elit mollis ullamcorper. Curabitur sit amet ex nec diam pretium molestie. Proin varius magna quis dolor euismod, sed ultrices magna fermentum. Nullam viverra, libero in scelerisque viverra, magna orci porttitor mauris, quis venenatis risus est mattis metus. Donec at congue massa.
-
-Duis nec auctor ante. Phasellus a purus vitae lacus tempus tristique. Nulla ultricies et nisi tempus dictum. In sed ultricies urna. Donec id ante dui. Sed quis finibus magna. Sed at luctus ipsum, sit amet vestibulum magna. Sed accumsan lorem sit amet leo tristique suscipit. Mauris lobortis ipsum ac congue laoreet. Cras egestas sapien sit amet est sagittis, eget pharetra nisl pharetra. Cras fringilla enim a nisl ornare, eget vulputate velit rhoncus. Mauris eu quam sit amet mi rutrum efficitur. Sed sollicitudin lorem ligula, ut scelerisque est rhoncus id. Donec vulputate fermentum vestibulum. Fusce sollicitudin et turpis vitae porttitor. Praesent feugiat fringilla ipsum ac accumsan."
-horizontal_alignment = 3
+offset_left = 954.0
+offset_top = 138.0
+offset_right = 1186.0
+offset_bottom = 494.0
+script = ExtResource("25_fc7ir")
