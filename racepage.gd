@@ -1,8 +1,5 @@
 extends Control
 
-# --- NEW INSPECTOR PARAMETER ---
-# This will show up in your Godot Inspector as a color picker!
-@export var bold_word_color: Color = Color.YELLOW
 
 # Find your empty vertical stack where the menu list goes
 @onready var buttons_stack: VBoxContainer = %racebuttons
@@ -12,7 +9,7 @@ extends Control
 
 # Node paths adjusted for your new hierarchy
 @onready var race_title: Label = $Affichage/RaceTitle
-@onready var description_label: RichTextLabel = $Affichage/StatScroller/Description
+@onready var description_label: DescriptionDisplay = $Affichage/StatScroller/Description
 
 func _ready() -> void:
 	# FORCE THE CONTAINERS TO STRETCH: 
@@ -75,16 +72,10 @@ func display_race_details(race_id: String) -> void:
 		
 		# --- MODIFIED SECTION ---
 		# Convert your chosen inspector color into a clean raw hex string (e.g., "ff00ff")
-		var hex_code = bold_word_color.to_html(false)
-		
-		# Wrap your bold strings inside a nested BBCode color block automatically
-		var formatted_text = description_text.replace("[b]", "[b][color=#" + hex_code + "]")
-		formatted_text = formatted_text.replace("[/b]", "[/color][/b]")
-		
-		description_label.text = formatted_text
+		description_label.display_formatted_text(description_text)
 		# ------------------------
 	else:
-		description_label.text = "[color=red]Missing description file for: " + race_id + "[/color]"
+		description_label.display_missing_race_message(race_id)
 
 
 # Tab-Delimited Reader (\t)
