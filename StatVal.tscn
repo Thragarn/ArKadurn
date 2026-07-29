@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bn1lgisioid43"]
+
+[ext_resource type="FontFile" uid="uid://3gff8tqg22fx" path="res://Fonts/lovtony.sans.ttf" id="1_muinp"]
+[ext_resource type="FontFile" uid="uid://ctqrhqm177b72" path="res://Fonts/BerkshireSwash-Regular.ttf" id="2_nry4j"]
+
+[node name="Intel" type="HBoxContainer" unique_id=896065119]
+
+[node name="Stat" type="Label" parent="." unique_id=219637683]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_muinp")
+theme_override_font_sizes/font_size = 24
+text = "Intelligence:"
+
+[node name="Value" type="Label" parent="." unique_id=752859923]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nry4j")
+theme_override_font_sizes/font_size = 21
+text = "+5"

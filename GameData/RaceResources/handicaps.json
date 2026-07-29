@@ -29,6 +29,12 @@
       {"modifier": "weight_mod", "value": 4}
     ]
   },
+    "homely": {
+    "description": "Troll faces aren't particularly attractive in terms of appearance, although their personalities and muscles do have their audience. Even amongst themselves, it's mostly the rocky shell that does the attraction part.",
+    "effects": [
+      {"flag": "ugly"}
+    ]
+  },
   "imposed_element_air": {
     "description": "All jinn are airbenders by default, in addition to another element.",
     "effects": [

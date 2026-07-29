@@ -41,19 +41,20 @@ func _load_and_display(full_path: String) -> void:
 	var new_texture = load(full_path) as Texture2D
 	_execute_fade_transition(new_texture)
 
-
 func _execute_fade_transition(target_texture: Texture2D) -> void:
 	if _is_transitioning:
 		return
 	_is_transitioning = true
 
+	var portrait_material := material as ShaderMaterial
+
 	var tween = create_tween()
-	tween.tween_property(self, "modulate:a", 0.0, fade_out_time)\
+	tween.tween_property(portrait_material, "shader_parameter/alpha_multiplier", 0.0, fade_out_time)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	tween.tween_callback(func():
 		texture = target_texture
 	)
-	tween.tween_property(self, "modulate:a", 1.0, fade_in_time)\
+	tween.tween_property(portrait_material, "shader_parameter/alpha_multiplier", 1.0, fade_in_time)\
 		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(func():
 		_is_transitioning = false
