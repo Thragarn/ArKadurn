@@ -31,8 +31,15 @@
 [ext_resource type="FontFile" uid="uid://3gff8tqg22fx" path="res://Fonts/lovtony.sans.ttf" id="29_r2wew"]
 [ext_resource type="Texture2D" uid="uid://bt6uj31vj5q0y" path="res://Assets/race menu images/c101.png" id="30_jfiu4"]
 [ext_resource type="Texture2D" uid="uid://3k8eq5lyu6qs" path="res://Assets/race menu images/c302.png" id="31_pn465"]
+[ext_resource type="Script" uid="uid://bqj68leno5246" path="res://stats_panel.gd" id="31_qkt4k"]
 [ext_resource type="Texture2D" uid="uid://cm85fwmnq8nta" path="res://Assets/race menu images/l3.png" id="32_qkt4k"]
 [ext_resource type="FontFile" uid="uid://bkwy5uwtb5vwv" path="res://Fonts/BLKCHCRY.TTF" id="33_jfiu4"]
+[ext_resource type="Script" uid="uid://bj6vcdjg5b765" path="res://stat_row.gd" id="33_qkt4k"]
+[ext_resource type="Texture2D" uid="uid://gb6i20jfm54d" path="res://Assets/race menu images/overview V5.png" id="36_te5en"]
+[ext_resource type="Texture2D" uid="uid://beg3frvwqbu0o" path="res://Assets/race menu images/l7.png" id="37_8vkwy"]
+[ext_resource type="Texture2D" uid="uid://cwsgjjtm0lc6e" path="res://Assets/race menu images/MLE.png" id="38_svsja"]
+[ext_resource type="FontFile" uid="uid://df3xxc1u5wnhd" path="res://Fonts/protonema.regular.ttf" id="39_8vkwy"]
+[ext_resource type="Texture2D" uid="uid://c3kqotld7fr5j" path="res://Assets/race menu images/height.png" id="39_dqba6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
 texture = ExtResource("1_b8ifu")
@@ -96,6 +103,34 @@ bg_color = Color(0.42304435, 0.3965867, 0.034280743, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2wew"]
 bg_color = Color(0.017020663, 0.017020686, 0.017020678, 0.41400003)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkt4k"]
+bg_color = Color(0.1855, 0.35200825, 0.53, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21666989, 0.5315571, 0.75196767, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_qkt4k"]
+TooltipLabel/colors/font_color = Color(0.9612289, 0.961229, 0.9612289, 1)
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/constants/line_spacing = -3
+TooltipLabel/font_sizes/font_size = 17
+TooltipLabel/fonts/font = ExtResource("29_r2wew")
+TooltipPanel/colors/title_color = Color(0, 0, 0, 1)
+TooltipPanel/colors/title_outline_modulate = Color(0, 0, 0, 1)
+TooltipPanel/constants/title_height = 0
+TooltipPanel/constants/title_outline_size = 0
+TooltipPanel/font_sizes/title_font_size = 16
+TooltipPanel/fonts/title_font = null
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_qkt4k")
 
 [node name="Control" type="Control" unique_id=1210271518]
 layout_mode = 3
@@ -399,14 +434,15 @@ theme_override_fonts/font = ExtResource("18_tldqt")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2wew")
 current_tab = 0
+tab_2/hidden = true
 tab_3/hidden = true
-tab_4/hidden = true
 
 [node name="Stats & Skills" type="TabBar" parent="TabContainer" unique_id=1048845481]
 layout_mode = 2
 metadata/_tab_index = 0
 
 [node name="TitleStats" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=311434982]
+metadata/_edit_lock_ = true
 
 [node name="C101" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleStats" unique_id=37129149]
 position = Vector2(83, 27)
@@ -430,143 +466,13 @@ theme_override_font_sizes/font_size = 25
 text = "Stats"
 horizontal_alignment = 1
 
-[node name="Stats" type="VBoxContainer" parent="TabContainer/Stats & Skills" unique_id=783667628]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 42.0
-offset_right = 143.0
-offset_bottom = 230.0
-scale = Vector2(0.92, 0.92)
-pivot_offset_ratio = Vector2(0.5, 0.5)
-theme_override_constants/separation = -2
-
-[node name="Intel" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1952192882]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Intel" unique_id=657713811]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "A sharp mind translates into masterwork crafting, and essential knowledge ranging from medicine to politics. It also somewhat affects the speed at which a character evolves."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Intelligence:"
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Intel" unique_id=424517386]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "+5"
-horizontal_alignment = 2
-
-[node name="Char" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=789503375]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Char" unique_id=1841992214]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "Commanding presence and social finesse allows one to sway courts, trick foes, or calm wild beasts. It dictates all persuasion, deception, and body language."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Charisma:"
-horizontal_alignment = 1
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Char" unique_id=1759389126]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "-2"
-horizontal_alignment = 2
-
-[node name="Psy" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1743588944]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Psy" unique_id=784247048]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "A high psyche offers inner fortitude and mental clarity, determining a character's MP pool, boosting magic abilities, and resistance to mind alteration."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Psyche:"
-horizontal_alignment = 1
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Psy" unique_id=1264225364]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "+1"
-horizontal_alignment = 2
-
-[node name="Agi" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=701481061]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Agi" unique_id=1326038298]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "Beyond boosting initiative order and movement speed, Agility is the stat that controls dodge, weapon wielding, and even stamina at higher values."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Agility:"
-horizontal_alignment = 1
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Agi" unique_id=1746303848]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "0"
-horizontal_alignment = 2
-
-[node name="Str" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=2145538970]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Str" unique_id=1228565741]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "High strength scales weapon damage, knockback and elemental bending power, as well as jumping distance."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Strength:"
-horizontal_alignment = 1
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Str" unique_id=424874597]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "+2"
-horizontal_alignment = 2
-
-[node name="Const" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1912298688]
-layout_mode = 2
-
-[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/Const" unique_id=411209384]
-layout_mode = 2
-size_flags_horizontal = 3
-tooltip_text = "Constitution is the base stat upon which a character's HP pool, recovery, and physical resistances scale."
-mouse_filter = 1
-theme_override_fonts/font = ExtResource("29_r2wew")
-theme_override_font_sizes/font_size = 24
-text = "Constitution:"
-horizontal_alignment = 1
-
-[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/Const" unique_id=875458504]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("18_tldqt")
-theme_override_font_sizes/font_size = 21
-text = "-3"
-horizontal_alignment = 2
-
-[node name="C302" type="Sprite2D" parent="TabContainer/Stats & Skills" unique_id=1797024855]
+[node name="C302" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleStats" unique_id=1797024855]
 modulate = Color(0.99667925, 0.91886747, 0.6642087, 1)
 position = Vector2(83, 239)
 scale = Vector2(0.05, 0.046)
 texture = ExtResource("31_pn465")
 
-[node name="L3" type="Sprite2D" parent="TabContainer/Stats & Skills" unique_id=693897688]
+[node name="L3" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleStats" unique_id=693897688]
 modulate = Color(0.7469324, 0.56786627, 0.1840679, 1)
 position = Vector2(169, 137)
 rotation = 1.5707964
@@ -575,22 +481,270 @@ texture = ExtResource("32_qkt4k")
 region_enabled = true
 region_rect = Rect2(282.17758, 0, 1962.8224, 152)
 
-[node name="Assets" type="TabBar" parent="TabContainer" unique_id=394840058]
+[node name="Stats" type="VBoxContainer" parent="TabContainer/Stats & Skills" unique_id=783667628]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 23.0
+offset_top = 42.0
+offset_right = 143.0
+offset_bottom = 230.0
+scale = Vector2(0.92, 0.92)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme = SubResource("Theme_qkt4k")
+theme_override_constants/separation = -2
+script = ExtResource("31_qkt4k")
+negative_color = Color(0.76, 0.152, 0.18240009, 1)
+neutral_color = Color(0.5, 0.5, 0.5, 1)
+metadata/_edit_lock_ = true
+
+[node name="intel" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1952192882]
+layout_mode = 2
+tooltip_text = "A sharp mind translates into masterwork crafting, and essential knowledge ranging from medicine to politics. It also somewhat affects the speed at which a character evolves."
+script = ExtResource("33_qkt4k")
+stat_key = "intel"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/intel" unique_id=657713811]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Intelligence:"
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/intel" unique_id=424517386]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="charis" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=789503375]
+layout_mode = 2
+tooltip_text = "Charisma gives commanding presence and social finesse, dictating the results of persuasion, deception, and body language."
+script = ExtResource("33_qkt4k")
+stat_key = "charis"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/charis" unique_id=1841992214]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Charisma:"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/charis" unique_id=1759389126]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="psy" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1743588944]
+layout_mode = 2
+tooltip_text = "A high psyche offers inner fortitude and mental clarity, determining a character's MP pool, boosting magic abilities, and resistance to mind alteration."
+script = ExtResource("33_qkt4k")
+stat_key = "psy"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/psy" unique_id=784247048]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Psyche:"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/psy" unique_id=1264225364]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="agi" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=701481061]
+layout_mode = 2
+tooltip_text = "Beyond boosting initiative order and movement speed, agility is the stat that controls dodge, weapon wielding, and even stamina at higher values."
+script = ExtResource("33_qkt4k")
+stat_key = "agi"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/agi" unique_id=1326038298]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Agility:"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/agi" unique_id=1746303848]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="strn" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=2145538970]
+layout_mode = 2
+tooltip_text = "High strength scales weapon damage, knockback and elemental bending power, as well as jumping distance."
+script = ExtResource("33_qkt4k")
+stat_key = "strn"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/strn" unique_id=1228565741]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Strength:"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/strn" unique_id=424874597]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="cnst" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1912298688]
+layout_mode = 2
+tooltip_text = "Constitution is the base stat upon which a character's HP pool, recovery, and physical resistances scale."
+script = ExtResource("33_qkt4k")
+stat_key = "cnst"
+
+[node name="Stat" type="Label" parent="TabContainer/Stats & Skills/Stats/cnst" unique_id=411209384]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("29_r2wew")
+theme_override_font_sizes/font_size = 24
+text = "Constitution:"
+horizontal_alignment = 1
+
+[node name="Value" type="Label" parent="TabContainer/Stats & Skills/Stats/cnst" unique_id=875458504]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_tldqt")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 2
+
+[node name="OWHeader" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=389474908]
+position = Vector2(5, 0)
+metadata/_edit_lock_ = true
+
+[node name="LogoOW" type="TextureRect" parent="TabContainer/Stats & Skills/OWHeader" unique_id=2045960081]
+offset_left = 303.0
+offset_top = -1.0
+offset_right = 1832.0
+offset_bottom = 999.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("36_te5en")
+metadata/_edit_lock_ = true
+
+[node name="L71" type="TextureRect" parent="TabContainer/Stats & Skills/OWHeader" unique_id=1241076403]
+modulate = Color(0.81, 0.617625, 0.2025, 1)
+offset_left = 174.0
+offset_top = 24.0
+offset_right = 1909.0
+offset_bottom = 172.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("37_8vkwy")
+metadata/_edit_lock_ = true
+
+[node name="L72" type="TextureRect" parent="TabContainer/Stats & Skills/OWHeader" unique_id=2116969512]
+modulate = Color(0.81, 0.617625, 0.2025, 1)
+offset_left = 413.0
+offset_top = 24.0
+offset_right = 2148.0
+offset_bottom = 172.0
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("37_8vkwy")
+flip_h = true
+metadata/_edit_lock_ = true
+
+[node name="MLE" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=1800984207]
+position = Vector2(0, 3)
+
+[node name="MLE" type="TextureRect" parent="TabContainer/Stats & Skills/MLE" unique_id=327898745]
+offset_left = 177.0
+offset_top = 48.0
+offset_right = 630.0
+offset_bottom = 505.0
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("38_svsja")
+metadata/_edit_use_anchors_ = true
+
+[node name="MLEtitle" type="Label" parent="TabContainer/Stats & Skills/MLE" unique_id=1225376223]
+offset_left = 224.91498
+offset_top = 51.13501
+offset_right = 340.91498
+offset_bottom = 74.13501
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 18
+text = "Life Expectancy"
+metadata/_edit_use_anchors_ = true
+
+[node name="MLEtext" type="RichTextLabel" parent="TabContainer/Stats & Skills/MLE" unique_id=618178569]
+offset_left = 229.0
+offset_top = 72.0
+offset_right = 326.0
+offset_bottom = 93.0
+theme_override_colors/default_color = Color(0.44279996, 0.73827326, 0.82, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.27022198, 0.40392157)
+theme_override_fonts/normal_font = ExtResource("39_8vkwy")
+theme_override_font_sizes/normal_font_size = 22
+text = "100 years"
+scroll_active = false
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AVGH" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=1074172999]
+position = Vector2(221, 3)
+
+[node name="AVGH" type="TextureRect" parent="TabContainer/Stats & Skills/AVGH" unique_id=1540870858]
+offset_left = 177.0
+offset_top = 48.0
+offset_right = 630.0
+offset_bottom = 505.0
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("39_dqba6")
+metadata/_edit_use_anchors_ = true
+
+[node name="AVGHtitle" type="Label" parent="TabContainer/Stats & Skills/AVGH" unique_id=1717915789]
+offset_left = 224.91498
+offset_top = 51.13501
+offset_right = 340.91498
+offset_bottom = 74.13501
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 18
+text = "Average Height"
+metadata/_edit_use_anchors_ = true
+
+[node name="AVGHtext" type="RichTextLabel" parent="TabContainer/Stats & Skills/AVGH" unique_id=560480411]
+offset_left = 229.0
+offset_top = 72.0
+offset_right = 338.0
+offset_bottom = 109.0
+theme_override_colors/default_color = Color(0.5158374, 0.79079187, 0.86911005, 1)
+theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.27022198, 0.40392157)
+theme_override_fonts/normal_font = ExtResource("39_8vkwy")
+theme_override_font_sizes/normal_font_size = 22
+text = "AAAAAAAAAA"
+scroll_active = false
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Assets & Handicaps" type="TabBar" parent="TabContainer" unique_id=513248547]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
-
-[node name="Handicaps" type="TabBar" parent="TabContainer" unique_id=513248547]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_name = "Assets & Handicaps"
 
 [node name="Tattoos" type="TabBar" parent="TabContainer" unique_id=194028408]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 3
+metadata/_tab_index = 2
 
 [node name="Mutations" type="TabBar" parent="TabContainer" unique_id=1777685204]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 4
+metadata/_tab_index = 3

@@ -10,6 +10,7 @@ extends Control
 # Node paths adjusted for your new hierarchy
 @onready var race_title: Label = $Affichage/RaceTitle
 @onready var description_label: DescriptionDisplay = $Affichage/StatScroller/Description
+@onready var stats_panel: VBoxContainer = %Stats
 
 func _ready() -> void:
 	# FORCE THE CONTAINERS TO STRETCH: 
@@ -63,6 +64,9 @@ func display_race_details(race_id: String) -> void:
 	
 	# 2. Construct the path to your txt file
 	var file_path = "res://GameData/RaceResources/txts/" + race_id + ".txt"
+	
+	# 2.5. For the stats
+	stats_panel.display_race_stats(race_id)
 	
 	# 3. Safety Check: If the file exists, read it.
 	if FileAccess.file_exists(file_path):

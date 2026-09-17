@@ -42,16 +42,18 @@ metadata/_edit_lock_ = true
 [node name="Logo" type="CanvasGroup" parent="BG1" unique_id=1321960391]
 position = Vector2(7.2727184, 14)
 scale = Vector2(1.0502002, 1.0716506)
+metadata/_edit_lock_ = true
 
 [node name="Iron Dust" type="TextureRect" parent="BG1/Logo" unique_id=1585694319]
-offset_left = -593.8462
-offset_top = -218.00003
-offset_right = 1775.1538
-offset_bottom = 794.0
+offset_left = -590.3637
+offset_top = -214.62216
+offset_right = 1778.6362
+offset_bottom = 797.3778
 scale = Vector2(0.3, 0.3)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("2_5hhq0")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Tales Of" type="Label" parent="BG1/Logo" unique_id=1117036089]
 offset_left = 350.76935
@@ -67,6 +69,7 @@ theme_override_fonts/font = ExtResource("3_inec3")
 theme_override_font_sizes/font_size = 60
 text = "Tales of"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="ArKadurn" type="Label" parent="BG1/Logo" unique_id=2045497167]
 offset_left = 559.99994
@@ -82,6 +85,7 @@ theme_override_fonts/font = ExtResource("3_inec3")
 theme_override_font_sizes/font_size = 100
 text = "Ar'Kadurn"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Continue" parent="." unique_id=129921402 instance=ExtResource("5_inec3")]
 layout_mode = 0
