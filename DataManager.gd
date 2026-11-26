@@ -4,11 +4,13 @@ extends Node
 var races: Dictionary = {}
 var assets: Dictionary = {}
 var handicaps: Dictionary = {}
+var skills: Dictionary = {}
 
 func _ready() -> void:
 	load_json_database("res://GameData/RaceResources/assets.json", assets)
 	load_json_database("res://GameData/RaceResources/handicaps.json", handicaps)
 	load_race_txt("res://GameData/RaceResources/racestxt.txt")
+	load_skills_txt("res://GameData/RaceResources/skills.txt")
 
 # 1. Standard JSON file loader
 func load_json_database(file_path: String, target_dict: Dictionary) -> void:
@@ -74,3 +76,36 @@ func load_race_txt(file_path: String) -> void:
 		races[current_race_id] = race_data
 	file.close()
 	print("Database pipeline fully loaded! Total races registered: ", races.size())
+
+func load_skills_txt(file_path: String) -> void:
+	if not FileAccess.file_exists(file_path):
+		printerr("Skills TXT file not found: ", file_path)
+		return
+
+	var file = FileAccess.open(file_path, FileAccess.READ)
+
+	var raw_headers = file.get_csv_line("\t")
+	if raw_headers.size() == 0: return
+
+	var headers: Array = []
+	for h in raw_headers:
+		headers.append(h.strip_edges().replace('"', ''))
+
+	while not file.eof_reached():
+		var row = file.get_csv_line("\t")
+		if row.size() < headers.size() or row[0].strip_edges() == "":
+			continue
+
+		var skill_key = row[0].strip_edges()
+		var skill_data = {}
+
+		for i in range(1, headers.size()):
+			var header_title = headers[i]
+			var raw_cell_value = row[i].strip_edges()
+			if raw_cell_value.begins_with('"') and raw_cell_value.ends_with('"'):
+				raw_cell_value = raw_cell_value.substr(1, raw_cell_value.length() - 2)
+			skill_data[header_title] = raw_cell_value
+
+		skills[skill_key] = skill_data
+	file.close()
+	print("Skills database loaded! Total skills registered: ", skills.size())

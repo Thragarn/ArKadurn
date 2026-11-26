@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://duq5x3hcm7q1y"]
+
+[ext_resource type="FontFile" uid="uid://3gff8tqg22fx" path="res://Fonts/lovtony.sans.ttf" id="1_u8240"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkt4k"]
+bg_color = Color(0.1855, 0.35200825, 0.53, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.21666989, 0.5315571, 0.75196767, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 5
+
+[resource]
+TooltipLabel/colors/font_color = Color(0.9612289, 0.961229, 0.9612289, 1)
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
+TooltipLabel/constants/line_spacing = -3
+TooltipLabel/font_sizes/font_size = 17
+TooltipLabel/fonts/font = ExtResource("1_u8240")
+TooltipPanel/colors/title_color = Color(0, 0, 0, 1)
+TooltipPanel/colors/title_outline_modulate = Color(0, 0, 0, 1)
+TooltipPanel/constants/title_height = 0
+TooltipPanel/constants/title_outline_size = 0
+TooltipPanel/font_sizes/title_font_size = 16
+TooltipPanel/fonts/title_font = null
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_qkt4k")

@@ -1,0 +1,108 @@
+{
+  "multicolored": {
+    "ep_cost": 7,
+    "max_stacks": 1,
+    "description": "Allows the geleton to change color at will. This gives an [b]advantage to stealth rolls[/b] that doesn't stack with the transparency one. Sometimes, these colors will betray the geleton's strong emotions.",
+    "effects": [
+      {"modifier": "stealth_advantage", "value": 1},
+      {"flag": "color_change"}
+    ]
+  },
+  "transparent": {
+    "ep_cost": 7,
+    "max_stacks": 1,
+    "description": "Allows the geleton to change their opacity at will. This gives an [b]advantage to stealth rolls[/b] that doesn't stack with the multicolor one.",
+    "effects": [
+      {"modifier": "stealth_advantage", "value": 1},
+      {"flag": "opacity_change"}
+    ]
+  },
+  "bioluminescent": {
+    "ep_cost": 5,
+    "max_stacks": 1,
+    "description": "Allows the geleton to light their body entirely or partially at will. This makes them work as a light source that doesn't produce heat or hurt vampires.",
+    "effects": [
+      {"flag": "bioluminescent"}
+    ]
+  },
+  "elementally_resistant": {
+    "ep_cost": 10,
+    "max_stacks": 4,
+    "description": "This mutation, which can be mutated once for each type of damage for a total of four times, [b]halves the damage[/b] of attacks having the chosen type (picking corrosive makes you [b]totally immune[/b]): Corrosive, Fire, Electric, Frost.",
+    "effects": [
+    ],
+    "choices": {
+      "corrosive": [{"modifier": "dmg_res_acid", "value": 1}],
+      "fire": [{"modifier": "dmg_res_fire", "value": 0.5}],
+      "electric": [{"modifier": "dmg_res_electric", "value": 0.5}],
+      "frost": [{"modifier": "dmg_res_frost", "value": 0.5}]
+    }
+  },
+  "aquatic_breathing": {
+    "ep_cost": 10,
+    "max_stacks": 1,
+    "description": "A Geleton breathes with their membrane. Thanks to this mutation, this works in water just as well as in air. Additionally, the swimming speed multiplier becomes [b]*{swim_speed_mult_base}[/b] instead of half the walking speed.",
+    "effects": [
+      {"flag": "water_breathing"},
+      {"modifier": "swim_speed_mult_base", "value": 1}
+    ]
+  },
+  "more_matter": {
+    "ep_cost": "6+2*{stack}",
+    "max_stacks": 5,
+    "description": "The Geleton becomes bigger. They gain [b]{height_mod} meters[/b] in height (so a [b]{weight_mod}[/b] gain in WV too) as well as [b]CONST HP[/b]. This mutation can be purchased up to [b]5 times[/b], becoming more expensive at each iteration (costs 8 the first time, 16 the fifth).",
+    "effects": [
+      {"modifier": "height_mod", "value": 0.5},
+      {"modifier": "weight_mod", "value": 0.5},
+      {"modifier": "hp_bonus", "formula": "{cnst}"}
+    ]
+  },
+  "metamorph": {
+    "ep_cost": 18,
+    "max_stacks": 1,
+    "description": "The most impressive of Geleton mutations, allowing the individual to freely shape their membrane. This allows them to change shapes and pass through any interstice as long as their main core can. This manoeuvrable body grants [b]{racial_dodge_armor}% dodge armor[/b].",
+    "effects": [
+      {"modifier": "racial_dodge_armor", "value": 15},
+      {"flag": "shapeshift"}
+    ]
+  },
+  "elastic_membrane": {
+    "ep_cost": 15,
+    "max_stacks": 1,
+    "description": "The geleton's membrane evolves to become more elastic and thus more resistant overall. They gain [b](10+Level)% natural armor[/b], and enemies inside them trying to escape get a [b]disadvantage[/b] on athletics checks.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "10+{g_lvl}"},
+      {"flag": "swallow_escape_disadvantage"}
+    ]
+  },
+  "polynuclear": {
+    "ep_cost": 12,
+    "max_stacks": 2,
+    "repurchasable": true,
+    "description": "Add a dormant secondary core. When the main core is destroyed, instead of it being fatal, it follows the amputation rules (50% HP) and the secondary core activates to become the main one. Cores still take double damage and have double disadvantage on aim. Can only have [b]two secondary cores[/b] at a time, but a destroyed core can be replaced by buying this mutation again. The secondary core development cost is constant, and it forms during a long rest.",
+    "effects": [
+      {"modifier": "secondary_cores", "value": 1}
+    ]
+  },
+  "acidic": {
+    "ep_cost": 8,
+    "max_stacks": 5,
+    "description": "The Geleton's cytoplasm becomes acidic, dealing corrosive damage each turn to the person inside them and half of it to their equipment. Each time this mutation is obtained, [b]{swallow_acid_dice}dX[/b] based on level is dealt. This mutation can be mutated [b]5 times[/b], for a maximum of 5dX per turn.",
+    "effects": [
+      {"modifier": "swallow_acid_dice", "value": 1}
+    ]
+  },
+  "poisonous": {
+    "ep_cost": 20,
+    "max_stacks": 3,
+    "description": "When the cytoplasm of a Geleton with this mutation touches the air, it turns into a contact poison. This means a swallowed foe only suffers these adverse effects after they get out. This mutation can be mutated a total of [b]three times[/b], each time giving a chosen additional effect:\n[b]Damage[/b] (level 1): deal (1+1 per 2 levels)dX poison damage.\n[b]Paralysis[/b] (level 3): -1 stamina, -2 starting at level 6, -3 starting at level 9. Lasts until the next short rest.\n[b]Hallucination[/b] (level 5): induces Rage, Fear, Bliss or Depression. Starting at level 8, RRs have disadvantage.\nA physical RR is allowed with [b](20+Level*5)%[/b] as a difficulty, halving upon success the poison damage and cancelling the other two effects. The Geleton can spit their cytoplasm on enemies or into a bottle, with each [b](10+Level) HP[/b] constituting one dose of poison.",
+    "effects": [
+      {"flag": "poisonous"}
+    ],
+    "choices": {
+      "damage": [{"flag": "poison_damage"}, {"modifier": "unlock_level", "value": 1}],
+      "paralysis": [{"flag": "poison_paralysis"}, {"modifier": "unlock_level", "value": 3}],
+      "hallucination": [{"flag": "poison_hallucination"}, {"modifier": "unlock_level", "value": 5}]
+    }
+  }
+}

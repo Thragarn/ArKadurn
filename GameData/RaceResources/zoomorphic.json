@@ -1,0 +1,1188 @@
+{
+  "dwarfism": {
+    "type": "handicap",
+    "cost": 0,
+    "access": "all",
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Height Value hardset at [b]racial minimum{height_set_min_offset}[/b], in addition to disadvantage on athletics checks. Versatile weapons are now two-handed, and great ones can't be used.",
+    "effects": [
+      {"modifier": "athl_advantage", "value": 1},
+      {"modifier": "height_set_min_offset", "value": -0.5},
+      {"flag": "smol"},
+      {"flag": "min_racial_size"}
+    ],
+    "grants_extra_trait": false
+  },
+  "hollow_bones": {
+    "type": "handicap",
+    "cost": 0,
+    "access": "all",
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Total HP [b]*{hp_mult}[/b] rounded up, and lose [b]1 Weight Value[/b] (0,5 if 1,5 HV or smaller). If 0,5 WV, it remains unchanged.",
+    "effects": [
+      {"modifier": "hp_mult", "value": 0.75},
+      {"flag": "hollow_bones"}
+    ],
+    "grants_extra_trait": false
+  },
+  "oblivious": {
+    "type": "handicap",
+    "cost": 0,
+    "access": "all",
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Suffer [b]{perception_chosen_sense_bonus}%[/b] on perception on a main sense.",
+    "effects": [
+      {"modifier": "perception_chosen_sense_bonus", "value": -30}
+    ],
+    "grants_extra_trait": false
+  },
+  "compound_eyes": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kaphrax"],
+    "max_stacks": 1,
+    "description": "All class ability ranges are multiplied by [b]{ability_range_mult}[/b], as well as weapon range ([b]*{weapon_range_mult}[/b]).",
+    "effects": [
+      {"modifier": "ability_range_mult", "value": 0.5},
+      {"modifier": "weapon_range_mult", "value": 0.5}
+    ]
+  },
+  "unsightly": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kaphrax"],
+    "max_stacks": 1,
+    "description": "No matter how much one tries to be open minded, looking this character in the eyes is very uncomfortable. Social encounters will be heavily affected.",
+    "effects": [
+      {"flag": "unsightly"}
+    ]
+  },
+  "frail": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["illithid"],
+    "max_stacks": 1,
+    "description": "[b]{light_armor_bonus}%[/b], [b]{medium_armor_bonus}%[/b] and [b]{heavy_armor_bonus}%[/b] on light, medium and heavy armor values respectively.",
+    "effects": [
+      {"modifier": "light_armor_bonus", "value": -5},
+      {"modifier": "medium_armor_bonus", "value": -10},
+      {"modifier": "heavy_armor_bonus", "value": -15}
+    ]
+  },
+  "self-conscious": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["illithid"],
+    "max_stacks": 1,
+    "description": "Although they may never admit it, each failure on an active (voluntary) dice roll causes this character to take [b]1d4 psychic damage[/b], [b]1d6[/b] starting at level 6, [b]1d8[/b] at level 10. This stops happening below CONST HP.",
+    "effects": [
+      {"flag": "self_conscious"}
+    ]
+  },
+  "dehydrated": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["thassalian"],
+    "max_stacks": 1,
+    "description": "Long and short rests only bring benefits if this character is fully immersed during them. Mostly a logistics annoyance.",
+    "effects": [
+      {"flag": "dehydrated"}
+    ]
+  },
+  "smelly": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["thassalian"],
+    "max_stacks": 1,
+    "description": "The oil produced by this character's skin to increase water speed does have a characteristic smell. [b]Advantage to enemy perception[/b].",
+    "effects": [
+      {"modifier": "enemy_perception_advantage", "value": 1}
+    ]
+  },
+  "nervous": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kemoggon"],
+    "max_stacks": 1,
+    "description": "The first to react even when they shouldn't, this character suffers [b]disadvantage to mental/physical RRs[/b] against emotion-inducing potions and spells.",
+    "effects": [
+      {"modifier": "emotion_RR_advantage", "value": -1}
+    ]
+  },
+  "many-stomached": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kemoggon"],
+    "max_stacks": 1,
+    "description": "Mostly herbivorous, this character possesses very large digestive tracts which allow them to make the most out of the food they eat, which makes them heavier both with muscle and fat. [b]+{weight_mod} Weight Value[/b].",
+    "effects": [
+      {"modifier": "weight_mod", "value": 1}
+    ]
+  },
+  "skittish": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["iyawana"],
+    "max_stacks": 1,
+    "description": "Always feeling smaller and more vulnerable, this character has a greater sensitivity to authoritative figures, suffering [b]disadvantage on social resistance rolls[/b] against them. Kings are usually heavily influential amidst Iyawana societies, recognizable as such with symbols of status they hoard and display. This behavior gave birth to the idea of the King of the Rats, a very powerful figure amongst a small community. An obviously more powerful character is also considered authoritative.",
+    "effects": [
+      {"modifier": "social_RR_vs_authority_advantage", "value": -1}
+    ]
+  },
+  "restless": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["iyawana"],
+    "max_stacks": 1,
+    "description": "Iyawanas are stressed sleepers, who never truly rest for long. A long rest is considered a short one, both narratively and mechanically.",
+    "effects": [
+      {"flag": "restless"}
+    ]
+  },
+  "voracity": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kenshar"],
+    "max_stacks": 1,
+    "description": "A meal that isn't mainly made of meat is akin to eating mud nutritionally.",
+    "effects": [
+      {"flag": "voracity"}
+    ]
+  },
+  "ruthless": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kenshar"],
+    "max_stacks": 1,
+    "description": "If not stopped, this character's instinct would push them into killing their target, even if they need them alive. To escape this yourself, surrender before they see you becoming too weak (mid-life).",
+    "effects": [
+      {"flag": "ruthless"}
+    ]
+  },
+  "ham-handed": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["kenshar"],
+    "max_stacks": 1,
+    "description": "Despite their best efforts, this character cannot write, and worse, draw magic circles and runes.",
+    "effects": [
+      {"flag": "ham_handed"}
+    ]
+  },
+  "vanity": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["asvyn"],
+    "max_stacks": 1,
+    "description": "This character's attire must reflect their wealth. If they don't buy a new outfit costing at least a third of their savings when arriving in a new town, OR each month living in a town, they drastically lose confidence. This results in [b]-5 Charisma[/b] and [b]disadvantage on all social rolls[/b].",
+    "effects": [
+      {"flag": "vanity"}
+    ]
+  },
+  "cold_blooded": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["ganwatl"],
+    "max_stacks": 1,
+    "description": "Fire and frost damage deals [b]one extra dX of double lower rank per attack stamina[/b]. For example, 1d8 twice lowered is 1d4.",
+    "effects": [
+      {"flag": "cold_blooded"}
+    ]
+  },
+  "apathetic": {
+    "type": "handicap",
+    "cost": 0,
+    "access": [],
+    "lycan_access": ["ganwatl"],
+    "max_stacks": 1,
+    "description": "Cannot have emotional short and long term objectives like vengeance.",
+    "effects": [
+      {"flag": "apathetic"}
+    ]
+  },
+  "arachnid": {
+    "type": "asset",
+    "cost": 2,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "excludes": ["cuticular_wings"],
+    "description": "This trait costs [b]2 traits[/b], and offers an extra pair of limbs, offering a walking speed multiplier of [b]*{walk_speed_mult_base}[/b]. In addition, it allows one to speak with small arachnids (not insectoids) and grants immunity to all arachnid venoms and webs. This lineage forbids cuticular wings. [b]{bleeding_limb_threshold} limbs[/b] lost to take bleeding. Now, dismemberment triggers at only [b]total HP*{dismemberment_hp_fraction}[/b].",
+    "effects": [
+      {"modifier": "walk_speed_mult_base", "value": 1.5},
+      {"modifier": "bleeding_limb_threshold", "value": 4},
+      {"modifier": "dismemberment_hp_fraction", "value": 0.25},
+      {"flag": "arachnid_speech"},
+      {"flag": "arachnid_venom_immunity"}
+    ]
+  },
+  "kitsune": {
+    "type": "asset",
+    "cost": 2,
+    "access": ["kenshar_ulfengar", "kenshar_kathar"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Not all Kenshars swore the oath. Convinced Urudshahag had done no wrong, this special lineage of Ulfengars which was closest to the ancient ruler refused to live without a king. When their kin rejected their ideas, these Kenshars exiled themselves to a distant archipelago where they would found the Shogunate, to this day still constituting its demographic majority. They typically look like fox Kenshars with an appearance much closer to humans than their peers, and more importantly with a variable number of tails. Indeed, a Kitsune will gain one tail at levels [b]0, 2, 3, 4, 5, 7, 8, 9 and 10[/b]. Each tail gives [b]+1 racial stat bonus[/b] (can't exceed +4 on any stat), and [b]+5 stable damage per turn[/b] to add to any attack. So the number of tails is a symbol of status and power. In addition, one may commit the dishonor of irrevocably sacrificing one of their tails following a resurrection, to avoid suffering a handicap. An even rarer Kathar variant exists: the Nekomata. This trait costs [b]2 traits[/b].",
+    "effects": [
+      {"modifier": "kitsune_tail_levels", "value": [0, 2, 3, 4, 5, 7, 8, 9, 10]},
+      {"flag": "kitsune"}
+    ]
+  },
+  "salamander": {
+    "type": "asset",
+    "cost": 2,
+    "access": ["ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Salamanders are a special Kekoatla bloodline. These humanoids only have four options for element combinations, but will be [b]totally immune[/b] to the corresponding type of damage, which will be very recognizable in their physical appearance: Electric, Corrosive, Fire or Frost. In addition, their elemental dX will be [b]{elemental_dx_rank} grade higher[/b]. If said dX is a d20, it instead becomes [b]1d20+5[/b]. Costs [b]2 traits[/b].",
+    "effects": [
+      {"modifier": "elemental_dx_rank", "value": 1}
+    ],
+    "choices": {
+      "electric": [{"modifier": "dmg_res_electric", "value": 1}],
+      "corrosive": [{"modifier": "dmg_res_acid", "value": 1}],
+      "fire": [{"modifier": "dmg_res_fire", "value": 1}],
+      "frost": [{"modifier": "dmg_res_frost", "value": 1}]
+    }
+  },
+  "chiropteral_membrane": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana_nyctis"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Gain bat arms that allow one to glide and the use of one's arms while gliding. Can be used to fly if combined with dwarfism or hollow bones. An Iyawana with this trait belongs to the Nyctis subrace. When using one's arms to fly, they aren't usable for anything else. Being airborne has an upkeep cost of [b]{flight_upkeep} stamina per turn[/b], and flight and gliding are completely silent. This flight has a speed multiplier of [b]*{flight_speed_mult_base}[/b]. Gliding has a speed multiplier of [b]*{glide_speed_mult_base}[/b], and needs no upkeep.",
+    "effects": [
+      {"flag": "glider"},
+      {"flag": "silent_flight"},
+      {"modifier": "flight_speed_mult_base", "value": 2},
+      {"modifier": "flight_upkeep", "value": 1},
+      {"modifier": "glide_speed_mult_base", "value": 1}
+    ]
+  },
+  "greater_composure": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana_hunbwu"],
+    "lycan_access": [],
+    "max_stacks": 2,
+    "description": "The Hunbwu are simply built different compared to their peers, especially their mental resilience. This trait can be taken [b]two times[/b], each one removing a chosen racial handicap. Those who possess the doubled version of this trait are called Prime Hunbwu, the oldest and least modified lineage amongst all zoomorphs.",
+    "effects": [
+      {"modifier": "removed_racial_handicaps", "value": 1}
+    ]
+  },
+  "anchoring_tail": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Nagas do not have legs, but instead half of their body mass is their own tail. They cannot jump, but can climb by coiling around something. Nagas cannot be knocked down (cannot be made to fall), and multiply displacement distance by [b]{displacement_mult}[/b]. On a successful Hand to Hand roll against an athletics RR, they can, for [b]one stamina per turn[/b], forbid a target in their melee from moving or being moved. Costs one trait.",
+    "effects": [
+      {"flag": "unknockable"},
+      {"modifier": "displacement_mult", "value": 0.5},
+      {"grants_abilities": ["anchoring_grab"]}
+    ]
+  },
+  "gigantism": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian", "kenshar", "asvyn", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "[b]+{height_mod} Height Value[/b] for your character, and gain an extra [b](CONST+5*Level) HP[/b].",
+    "effects": [
+      {"modifier": "height_mod", "value": 1},
+      {"modifier": "hp_bonus", "formula": "{cnst}+5*{g_lvl}"}
+    ]
+  },
+  "superior_gigantism": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 2,
+    "description": "[b]+{height_mod} Height Value[/b] for your character, and gain an extra [b](CONST+5*Level) HP[/b]. Kemoggons can take this trait twice, with twice the benefits.",
+    "effects": [
+      {"modifier": "height_mod", "value": 1},
+      {"modifier": "hp_bonus", "formula": "{cnst}+5*{g_lvl}"}
+    ]
+  },
+  "xylobite": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian", "kenshar_ulfengar", "kenshar_krohulgar", "kemoggon", "iyawana", "ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "With a bite strong enough to dig through wood or bone, this humanoid's bite deals classic melee damage and ignores [b]all natural armor[/b] and [b]half the equipment armor[/b]. Kenshars: Ulfengars and Krohulgars only. Ganwatl: forbidden for Kekoatlas.",
+    "effects": [
+      {"grants_abilities": ["xylobite"]}
+    ]
+  },
+  "tunneler": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "iyawana_tunwe", "ganwatl_azatotl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Allows one to move by digging, with a tunneling base speed multiplier of [b]*{dig_speed_mult_base}[/b]. In addition, those hands adapted for digging have hand to hand damage multiplied by [b]*1,5[/b] against earth and sand elementals. Iyawana: Tunwe only. Ganwatl: Az'atotl only.",
+    "effects": [
+      {"modifier": "dig_speed_mult_base", "value": 0.75},
+      {"flag": "fuck_earth"}
+    ]
+  },
+  "transitioner": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "For a hearty meal and an extra long rest, turn male, female or even hermaphrodite. Why? You tell me.",
+    "effects": [
+      {"flag": "sex_change"}
+    ]
+  },
+  "electroception": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Extra sense, yay! It's harder to block, because it is relatively unknown. Unaffected by fog or smoke.",
+    "effects": [
+      {"grants_abilities": ["electroception"]}
+    ]
+  },
+  "echolocation": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon", "iyawana_nyctis"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Extra sense, yay! It's harder to block, because it is relatively unknown. Unaffected by fog or smoke. If another creature is echolocating, you'll know it. Iyawana: Nyctis only.",
+    "effects": [
+      {"grants_abilities": ["echolocation"]}
+    ]
+  },
+  "infravision": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Can perceive heat, even through thin walls. [b]Advantage to perception[/b] against hot-blooded creatures. Az'atotl and Nagas only.",
+    "effects": [
+      {"grants_abilities": ["infravision"]}
+    ]
+  },
+  "power_legs": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "kenshar_kathar", "iyawana", "ganwatl_azatotl", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Multiply your jumping distance by [b]{jump_mult}[/b], and gain [b]{leg_h2h_dice}dX[/b] with leg hand to hand attacks. Kenshars: Kathars only. Ganwatl: obviously forbidden for Nagas.",
+    "effects": [
+      {"modifier": "jump_mult", "value": 3},
+      {"modifier": "leg_h2h_dice", "value": 1}
+    ]
+  },
+  "wastelander": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Numerous Kaphrax are immune to Urudshahag's curse, thriving in it.",
+    "effects": [
+      {"flag": "curse_immune_urudshahag"}
+    ]
+  },
+  "amphibian": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "illithid"],
+    "lycan_access": ["thassalian"],
+    "max_stacks": 1,
+    "description": "Breathe in water like on land, and have a [b]*{swim_speed_mult_base}[/b] speed mult in both.",
+    "effects": [
+      {"flag": "water_breathing"},
+      {"modifier": "swim_speed_mult_base", "value": 1}
+    ]
+  },
+  "batracian": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Although not a race-defining trait, this trait unique to Kekoatlas allows one to breathe in water, and have a [b]*{swim_speed_mult_base}[/b] swimming speed multiplier.",
+    "effects": [
+      {"flag": "water_breathing"},
+      {"modifier": "swim_speed_mult_base", "value": 1}
+    ]
+  },
+  "aquatic": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kenshar_otgar", "asvyn"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This trait gives a [b]*{swim_speed_mult_base}[/b] swim speed multiplier, and grants the ability to hold one's breath for [b]{breath_hold_mins} minutes[/b] (a long scene). Kenshars: Ötgars only.",
+    "effects": [
+      {"modifier": "swim_speed_mult_base", "value": 1},
+      {"modifier": "breath_hold_mins", "value": 30}
+    ]
+  },
+  "superior_aquatic": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This trait gives a [b]*{swim_speed_mult_base}[/b] swim speed multiplier, and grants the ability to hold one's breath for [b]{breath_hold_mins} minutes[/b] (a long scene).",
+    "effects": [
+      {"modifier": "swim_speed_mult_base", "value": 1},
+      {"modifier": "breath_hold_mins", "value": 120}
+    ]
+  },
+  "aquatic_tail": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This tail sets the swimming speed multiplier at [b]*{swim_speed_mult_base}[/b]. Forbidden for Kekoatlas.",
+    "effects": [
+      {"modifier": "swim_speed_mult_base", "value": 1.5}
+    ]
+  },
+  "aquatic_miracle": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "In exchange for getting dwarfism, this trait allows this humanoid to walk on water. They can remain on its surface as long as they move at least once per turn.",
+    "effects": [
+      {"flag": "water_walking"},
+      {"grants_traits": ["dwarfism"]}
+    ]
+  },
+  "insectoid_queen": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Allows one to talk with one precise kind of insects.",
+    "effects": [
+      {"grants_abilities": ["insect_speech"]}
+    ]
+  },
+  "cuticular_wings": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "These dorsal wings are perfectly foldable, but are extremely noisy. Although they sacrifice speed compared to other flying humanoids, they do not need Dwarfism or Hollow bones to allow flight. When flying, the Kaphrax moves at [b]*{flight_speed_mult_base}[/b] but can't be discreet. Maintaining flight costs [b]{flight_upkeep} stamina per turn[/b]. Gliding has a speed multiplier of [b]*{glide_speed_mult_base}[/b], and needs no upkeep.",
+    "effects": [
+      {"flag": "flutterer"},
+      {"modifier": "flight_speed_mult_base", "value": 1.5},
+      {"modifier": "flight_upkeep", "value": 1},
+      {"modifier": "glide_speed_mult_base", "value": 1}
+    ]
+  },
+  "lepiodal_wings": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "requires": ["cuticular_wings"],
+    "description": "For an extra trait point, cuticular wings become silent, and look like a butterfly's or a moth's.",
+    "effects": [
+      {"flag": "silent_flight"}
+    ]
+  },
+  "arm_wings": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn_rauku"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "The arms of a Rauku double as wings, only allowing for gliding at a [b]*{glide_speed_mult_base}[/b] base speed multiplier, unless they have hollow bones or dwarfism, which unlocks flight. Because of the upper-body muscles being specialized for flight, this trait gives a speed multiplier of [b]*{flight_speed_mult_base}[/b]. Flight has an upkeep cost of [b]{flight_upkeep} stamina per turn[/b], the wings being completely silent. Gliding has no upkeep cost. Raukus only.",
+    "effects": [
+      {"flag": "glider"},
+      {"flag": "silent_flight"},
+      {"modifier": "flight_speed_mult_base", "value": 2.25},
+      {"modifier": "glide_speed_mult_base", "value": 1},
+      {"modifier": "flight_upkeep", "value": 1}
+    ]
+  },
+  "back_wings": {
+    "type": "asset",
+    "cost": 2,
+    "access": ["asvyn_aramaku"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "With a pair of wings on their back, an Aramaku is only capable of gliding at a [b]*{glide_speed_mult_base}[/b] base speed multiplier, unless they have hollow bones or dwarfism, which unlocks flight. Costing two traits, this pair of wings allows for free arm usage during flight, although the speed multiplier is at [b]*{flight_speed_mult_base}[/b] because the extra arms take up muscle space. Flight has an upkeep cost of [b]{flight_upkeep} stamina per turn[/b], the wings being completely silent. Gliding has no upkeep cost. Aramakus only.",
+    "effects": [
+      {"flag": "glider"},
+      {"flag": "silent_flight"},
+      {"flag": "free_flight_arms"},
+      {"modifier": "flight_speed_mult_base", "value": 1.75},
+      {"modifier": "glide_speed_mult_base", "value": 1},
+      {"modifier": "flight_upkeep", "value": 1}
+    ]
+  },
+  "venom_strike": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian", "ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Be it by sting or bite, this race can, twice per long rest, inject an opponent with their venom. Each long rest, they may choose the effect of the synthesised poison: [b]Damage[/b] (Level 1): deal [b](1+1 per 2 levels)dX[/b] poison damage. [b]Paralysis[/b] (Level 3): [b]-1 stamina[/b], -2 starting at level 6, -3 starting at level 9. Lasts until the next short rest. [b]Hallucination[/b] (Level 5): induces Rage, Fear, Bliss or Depression. Starting at level 8, RRs have disadvantage. A physical RR is allowed with [b](20+Level*5)%[/b] as a difficulty, halving the poison damage upon success and cancelling the other two effects. Ganwatl: Az'atotl and Nagas only.",
+    "effects": [
+      {"grants_abilities": ["venom_strike"]}
+    ]
+  },
+  "venomous": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid", "thassalian", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "When melee attacked, this race can react by poisoning their foe. Each long rest, they may choose the effect of the synthesised poison: [b]Damage[/b] (Level 1): deal [b](1+1 per 2 levels)dX[/b] poison damage. [b]Paralysis[/b] (Level 3): [b]-1 stamina[/b], -2 starting at level 6, -3 starting at level 9. Lasts until the next short rest. [b]Hallucination[/b] (Level 5): induces Rage, Fear, Bliss or Depression. Starting at level 8, RRs have disadvantage. A physical RR is allowed with [b](20+Level*5)%[/b] as a difficulty, halving the poison damage upon success and cancelling the other two effects. Ganwatl: Kekoatlas only.",
+    "effects": [
+      {"grants_abilities": ["venomous"]}
+    ]
+  },
+  "ophidian": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "ganwatl_kekoatla", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Poisons now heal the character with half the original value instead of harming them. [b]+{max_toxicity} maximum toxicity[/b]. Ganwatl: only Kekoatlas and Nagas.",
+    "effects": [
+      {"flag": "poison_heals"},
+      {"modifier": "max_toxicity", "value": 2}
+    ]
+  },
+  "wallcrawler": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "ganwatl_azatotl", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Slither on walls and ceilings at your climbing speed. Ganwatl: forbidden for Nagas.",
+    "effects": [
+      {"flag": "wallcrawler"}
+    ]
+  },
+  "bioluminescence": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Emit light (or don't) at will. Not enough to blind or damage anyone.",
+    "effects": [
+      {"flag": "bioluminescent"}
+    ]
+  },
+  "thickened": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This race's chitin or scales resemble organic plate armor. Obtain [b](15+2*Level)%[/b] natural armor. Ganwatl: Az'atotl and Nagas only.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "15+2*{g_lvl}"}
+    ]
+  },
+  "overthickened": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This Kemoggon's grey derm resembles organic plate armor. Obtain [b](15+3*Level)%[/b] natural armor.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "15+3*{g_lvl}"}
+    ]
+  },
+  "thicker_scales": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["thassalian"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Some Thassalian lineages have developed bonier protective scales. Obtain an additional [b](10+Level)%[/b] natural armor.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "10+{g_lvl}"}
+    ]
+  },
+  "thick_feathers": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn_kenku"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This Asvyn's feathers are so dense they protect them better. Obtain [b](10+2*Level)%[/b] natural armor. [b]Halve frost damage[/b]. Kenkus only.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "10+2*{g_lvl}"},
+      {"modifier": "dmg_res_frost", "value": 0.5}
+    ]
+  },
+  "thick_fur": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kenshar"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This Kenshar's fur is so dense it protects them better. Obtain [b](10+2*Level)%[/b] natural armor. [b]Halve frost damage[/b].",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "10+2*{g_lvl}"},
+      {"modifier": "dmg_res_frost", "value": 0.5}
+    ]
+  },
+  "carapace": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_azatotl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "excludes": ["glider_membrane"],
+    "description": "Gain [b]CONST%[/b] natural armor thanks to this carapace that doesn't restrict movement. If combined with the \"thickened\" trait, their combined armor becomes [b](CONST+2*Level)%[/b] natural armor. Az'atotl only.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "{cnst}"},
+      {"flag": "carapace"}
+    ]
+  },
+  "strong_stomach": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian", "kenshar_ulfengar", "asvyn"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Completely unaffected by stink and disgust, and can eat rotten junk as nutritious meals. Kenshars: Ulfengars only.",
+    "effects": [
+      {"flag": "strong_stomach"}
+    ]
+  },
+  "corrosive_spit": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "asvyn"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Shoot out your stomach acids, dealing [b](1+Level/2)dX corrosive damage[/b] to your target, and half that value to their armor. Range is [b](3+Level) meters[/b]. This attack is usable [b]twice per short rest[/b], at the cost of [b]1 stamina[/b] and your public image.",
+    "effects": [
+      {"grants_abilities": ["corrosive_spit"]}
+    ]
+  },
+  "panoramic_view": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "asvyn"],
+    "lycan_access": ["kemoggon"],
+    "max_stacks": 1,
+    "description": "Eyes that extend the peripheral vision to one's back. Advantage on perception checks against stealth or when looking for someone. However, these wide-set eyes do kinda look stupid.",
+    "effects": [
+      {"modifier": "perception_vs_stealth_advantage", "value": 1}
+    ]
+  },
+  "perceptive": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kaphrax", "thassalian", "kenshar", "kemoggon", "iyawana", "asvyn", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 2,
+    "description": "Gain [b]+{perception_chosen_sense_bonus}%[/b] on perception on a chosen sense. Can be taken twice. Kenshars: a sense other than racial.",
+    "effects": [
+      {"modifier": "perception_chosen_sense_bonus", "value": 30}
+    ]
+  },
+  "adaptive_camouflage": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Your skin will constantly change color to fit into the environment around you. [b]Disadvantage to enemy perception[/b].",
+    "effects": [
+      {"modifier": "enemy_perception_advantage", "value": -1}
+    ]
+  },
+  "camouflage": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn", "kenshar", "iyawana"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Choose a biome (Urban, Forest, Desert, Tundra,…) where your feather or pelt color and pattern would cause [b]disadvantage to enemy perception[/b].",
+    "effects": [
+      {"modifier": "enemy_perception_advantage_in_biome", "value": -1}
+    ]
+  },
+  "extra_organs": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "You can't hit an Illithid where it hurts, as nowhere really hurts. This trait halves backstab and location multipliers (2 becomes 1,5). Note that this halving happens once, meaning you don't multiply backstab halved by location halved, it's their product that is. [b]Immunity to bleeding[/b].",
+    "effects": [
+      {"flag": "halved_crit_multipliers"},
+      {"flag": "bleedless"}
+    ]
+  },
+  "compressive": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Your bones are malleable and dislocatable. You can go through any cavity as large as a fist.",
+    "effects": [
+      {"flag": "compressive"}
+    ]
+  },
+  "limb_recovery": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "For an extra meal and a long rest, recover one lost limb. Ganwatl: Kekoatlas only.",
+    "effects": [
+      {"flag": "limb_regrowth"}
+    ]
+  },
+  "hypnotic_eyes": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid", "kemoggon", "ganwatl_naga", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "For [b]1 stamina[/b], hypnotise a non-blind enemy, cancelling the entirety of their dodge armor. They get to make a Mental RR with a [b](20+5*Level)%[/b] difficulty. Kemoggons: unique to some Caprini lineages. Ganwatl: Nagas and Kekoatlas only.",
+    "effects": [
+      {"grants_abilities": ["hypnotic_eyes"]}
+    ]
+  },
+  "inkshot": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "[b]Five times[/b] each long rest, shoot an enemy within a [b](CONST/2)[/b] range with ink for no stamina. They won't be able to defend or dodge (removes dodge armor) against the next attack. This action can be used out of turn to help an ally.",
+    "effects": [
+      {"grants_abilities": ["inkshot"]}
+    ]
+  },
+  "senior": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["illithid", "thassalian", "kemoggon", "asvyn", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Additional [b]{lifespan_bonus} years[/b] of life expectancy.",
+    "effects": [
+      {"modifier": "lifespan_bonus", "value": 100}
+    ]
+  },
+  "spiny": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["thassalian", "iyawana_tunwe"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "With a body covered in spines, cause [b]1dX[/b] of damage based on your constitution each time you get attacked in melee to whoever attacked you, unless they're using a great weapon. [b]2dX[/b] starting at level 6. Iyawana: Tunwe only.",
+    "effects": [
+      {"modifier": "thorns_dice", "formula": "1+floor({g_lvl}/6)"}
+    ]
+  },
+  "electropunch": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["thassalian"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Your hand to hand attacks now deal electric and physical damage. In water, a target next to the one you attacked will take half the damage you dealt.",
+    "effects": [
+      {"flag": "electropunch"}
+    ]
+  },
+  "shrill": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn", "kenshar", "kemoggon", "iyawana"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Let out a very loud sound that causes acoustic (physical) damage to all creatures on a line of [b](CONST/3) meters[/b]. Damage is as follows, with X based on constitution: [b](2+Level/2)dX[/b]. Twice per short rest, costs [b]1 Stamina[/b].",
+    "effects": [
+      {"grants_abilities": ["shrill"]}
+    ]
+  },
+  "fanning_tail": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "This fanning tail grants [b]advantage on all social rolls[/b], and can be used to share the advantage of camouflage with close allies. However, it multiplies the flight stamina sustain cost by [b]{flight_upkeep_mult}[/b].",
+    "effects": [
+      {"modifier": "social_advantage", "value": 1},
+      {"modifier": "flight_upkeep_mult", "value": 2}
+    ]
+  },
+  "feather_fall": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn", "kenshar_kathar", "iyawana"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Each fall damage 2d6 is now turned into 1d4. Any extra one is kept at 1d6. Kenshars: Kathars only.",
+    "effects": [
+      {"flag": "feather_fall"}
+    ]
+  },
+  "claws": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn", "iyawana", "ganwatl_azatotl"],
+    "lycan_access": ["kenshar"],
+    "max_stacks": 1,
+    "description": "Sharp claws that deal extra hand to hand damage proportional to strength: [b]Str/4[/b] for Light Attacks, [b]Str/2[/b] for Medium Attacks, [b]Str*3/4[/b] for Heavy Attacks. Ganwatl: Az'atotl only.",
+    "effects": [
+      {"modifier": "h2h_light_dmg_bonus", "formula": "{strn}/4"},
+      {"modifier": "h2h_medium_dmg_bonus", "formula": "{strn}/2"},
+      {"modifier": "h2h_heavy_dmg_bonus", "formula": "{strn}*3/4"}
+    ]
+  },
+  "long_claws": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["asvyn", "kenshar", "iyawana_tunwe", "iyawana_nyctis", "ganwatl_azatotl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "requires": ["claws"],
+    "description": "Multiply the hand to hand damage bonus given by your claws by [b]{claws_mult}[/b]. Iyawana: forbidden for Hunbwu. Ganwatl: Az'atotl only.",
+    "effects": [
+      {"modifier": "claws_mult", "value": 2}
+    ]
+  },
+  "quadruple_sprint": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kenshar","kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "When moving on four limbs, the zoomorph gains [b]*1.5 walking speed multiplier[/b]. After a quadruple sprint, one stamina needs to be used to unsheathe their weapon again.",
+    "effects": [
+      {"grants_abilities": ["quadruple_sprint"]}
+    ]
+  },
+  "velvet_paws": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kenshar"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "[b]Advantage to stealth rolls[/b].",
+    "effects": [
+      {"modifier": "stealth_advantage", "value": 1}
+    ]
+  },
+  "darkvision": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kenshar"],
+    "lycan_access": ["illithid"],
+    "max_stacks": 1,
+    "description": "Able to see in complete darkness.",
+    "effects": [
+      {"grants_abilities": ["darkvision"]}
+    ]
+  },
+  "nightvision": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana"],
+    "lycan_access": ["thassalian", "kenshar"],
+    "max_stacks": 1,
+    "description": "Able to see clearly as long as there's a dim source of light.",
+    "effects": [
+      {"grants_abilities": ["nightvision"]}
+    ]
+  },
+  "hexapeds": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Some Kemoggons, like centaurs, have a total of six limbs. It allows them to use quadruple sprint while still being able to use two arms. [b]Double disadvantage to acrobatics[/b] in return, in addition to the incapacity of scratching one's knees. Another Troll victory. [b]{bleeding_limb_threshold} limbs[/b] now need to be lost to take bleeding.",
+    "effects": [
+      {"modifier": "acrobatics_advantage", "value": -2},
+      {"modifier": "bleeding_limb_threshold", "value": 3},
+      {"flag": "cant_scratch_knees"}
+    ]
+  },
+  "humped_survivor": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Unique to Camelids, these humanoids can survive with [b]one meal per two days[/b], and with a very rare water intake. Their bodies are in fact so poor in water that vampires can't suck their blood, and blood and water bending (magical or elemental) won't affect them.",
+    "effects": [
+      {"flag": "humped_survivor"},
+      {"flag": "blood_bending_immune"}
+    ]
+  },
+  "trunk": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["kemoggon"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "You don't need this trait to have a trunk, but you need it if you want to control it like an extra arm.",
+    "effects": [
+      {"flag": "extra_arm"}
+    ]
+  },
+  "dexterous_tail": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana_tunwe", "iyawana_hunbwu", "ganwatl_azatotl", "ganwatl_naga"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "You don't need this trait to have a tail, but you need it if you want to control it like an extra arm. Iyawana: forbidden for Nyctis. Ganwatl: forbidden for Kekoatlas.",
+    "effects": [
+      {"flag": "extra_arm"}
+    ]
+  },
+  "dexterous_legs": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana_hunbwu", "iyawana_nyctis"],
+    "lycan_access": ["asvyn"],
+    "max_stacks": 1,
+    "description": "These humanoids are capable of using their legs like arms, albeit with a [b]{leg_action_penalty}% penalty[/b] on any action. Iyawana: only for Hunbwu and Nyctis.",
+    "effects": [
+      {"flag": "leg_hands"},
+      {"modifier": "leg_action_penalty", "value": 20}
+    ]
+  },
+  "arboreal": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Climb at [b]*{climb_speed_mult_base}[/b] speed up trees, or any climbed thing really. No rolls necessary.",
+    "effects": [
+      {"flag": "climber"},
+      {"modifier": "climb_speed_mult_base", "value": 1.5}
+    ]
+  },
+  "glider_membrane": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["iyawana_tunwe", "iyawana_nyctis", "ganwatl"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "excludes": ["carapace"],
+    "description": "Allows gliding and cancels fall damage. This membrane, going from the wrists to the hips, can't be upgraded for flight and allows for the use of one's arms mid air. Gliding has a speed multiplier of [b]*{glide_speed_mult_base}[/b], and needs no upkeep. Iyawana: forbidden for Hunbwu. Ganwatl: can't have a carapace.",
+    "effects": [
+      {"flag": "glider"},
+      {"modifier": "glide_speed_mult_base", "value": 1}
+    ]
+  },
+  "murder_tongue": {
+    "type": "asset",
+    "cost": 1,
+    "access": ["ganwatl_azatotl", "ganwatl_kekoatla"],
+    "lycan_access": [],
+    "max_stacks": 1,
+    "description": "Use your tongue to deliver hand to hand attacks and control it like an extra arm. Az'atotl and Kekoatlas only, forbidden for Nagas.",
+    "effects": [
+      {"flag": "extra_arm"},
+      {"flag": "tongue_h2h"}
+    ]
+  },
+  "hexapoda": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["kaphrax"],
+    "max_stacks": 1,
+    "description": "[b]+{stamina_bonus} Stamina[/b], thanks to that extra pair of limbs. [b]{bleeding_limb_threshold} limbs[/b] lost to take bleeding.",
+    "effects": [
+      {"modifier": "stamina_bonus", "value": 1},
+      {"modifier": "bleeding_limb_threshold", "value": 3}
+    ]
+  },
+  "tentacles": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["illithid"],
+    "max_stacks": 1,
+    "description": "2 to 6 tentacles (no mechanics change) grow from this character's face, acting as a bit less controllable extra limbs.",
+    "effects": [
+      {"flag": "tentacles"}
+    ]
+  },
+  "lumiscales": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["thassalian"],
+    "max_stacks": 1,
+    "description": "These scales, some being bioluminescent, grant their owner [b]CONST%[/b] natural armor. They can be used to communicate silently, and to lightly illuminate a dark space.",
+    "effects": [
+      {"modifier": "racial_nat_armor", "formula": "{cnst}"},
+      {"flag": "bioluminescent"}
+    ]
+  },
+  "dexterous_aquatic_tail": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["thassalian"],
+    "max_stacks": 1,
+    "description": "This tail, aside from setting the swimming speed multiplier at [b]*{swim_speed_mult_base}[/b], can be used as another arm.",
+    "effects": [
+      {"modifier": "swim_speed_mult_base", "value": 1.5},
+      {"flag": "extra_arm"}
+    ]
+  },
+  "bloodthirsty": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["kenshar"],
+    "max_stacks": 1,
+    "description": "When an enemy is at or below mid-life, this character can enter an entranced state, gaining either [b]advantage on all attacks[/b] against them, or [b]an extra free movement[/b] to chase them. This choice can be changed at the beginning of each turn. If they choose to be entranced, they cannot attack another target until the current one is downed.",
+    "effects": [
+      {"grants_abilities": ["bloodthirsty"]}
+    ]
+  },
+  "harpies": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["asvyn"],
+    "max_stacks": 1,
+    "description": "This character is capable of imitating the voices and accents of other humanoids thanks to their unique vocal cords. These also make them excellent singers.",
+    "effects": [
+      {"grants_abilities": ["vocal_mimicry"]}
+    ]
+  },
+  "pretty": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["asvyn"],
+    "max_stacks": 1,
+    "description": "This character is usually pretty. This can open new social opportunities, allowing for more seduction interactions for example.",
+    "effects": [
+      {"flag": "pretty"}
+    ]
+  },
+  "heavy_cavalry": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["kemoggon"],
+    "max_stacks": 1,
+    "description": "This character has a [b]*{speed_mult_choice} multiplier[/b] on either walking or swimming speed. Inventory capacity [b]*{carry_capacity_mult}[/b].",
+    "effects": [
+      {"flag": "kemoggon_speed_mult_choice"},
+      {"modifier": "speed_mult_choice", "value": 1.5},
+      {"modifier": "carry_capacity_mult", "value": 1.5}
+    ]
+  },
+  "impulsive": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["kemoggon"],
+    "max_stacks": 1,
+    "description": "This character is the first to react. [b]5+Level[/b] initiative bonus.",
+    "effects": [
+      {"modifier": "initiative_bonus", "formula": "5+{g_lvl}"}
+    ]
+  },
+  "climbers": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["iyawana"],
+    "max_stacks": 1,
+    "description": "This character is used to climbing most vertical surfaces without difficulty, not needing any skill check. Base climbing speed multiplier becomes [b]*{climb_speed_mult_base}[/b].",
+    "effects": [
+      {"flag": "climber"},
+      {"modifier": "climb_speed_mult_base", "value": 1}
+    ]
+  },
+  "elusive": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["iyawana"],
+    "max_stacks": 1,
+    "description": "[b]+{racial_dodge_armor}%[/b] Dodge Armor as long as they don't wear any heavy armor.",
+    "effects": [
+      {"modifier": "racial_dodge_armor", "value": 20}
+    ]
+  },
+  "ectothymic": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["ganwatl"],
+    "max_stacks": 1,
+    "description": "The emotions of this character, if existing, work differently. [b]Total immunity to induced feelings[/b], be they by magic or potion.",
+    "effects": [
+      {"flag": "induced_feeling_immunity"}
+    ]
+  },
+  "ectotherm": {
+    "type": "asset",
+    "cost": 1,
+    "access": [],
+    "lycan_access": ["ganwatl"],
+    "max_stacks": 1,
+    "description": "This character's metabolism is slowed. They only need [b]one meal per day[/b], and can hold their breath up to [b]{breath_hold_mins} minutes[/b] (short scene).",
+    "effects": [
+      {"flag": "one_meal_per_day"},
+      {"modifier": "breath_hold_mins", "value": 30}
+    ]
+  }
+}

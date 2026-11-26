@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://coa6i62uqd1y3" path="res://Assets/race menu images/Combined frames.png" id="2_kiewt"]
 [ext_resource type="Texture2D" uid="uid://domccaypeajec" path="res://Assets/race menu images/BannerHD FINAL.png" id="4_73p5f"]
 [ext_resource type="Texture2D" uid="uid://b2sne6jgqkfy7" path="res://Assets/race menu images/01-Poetcore inspired tarot card 2.png" id="5_73p5f"]
+[ext_resource type="PackedScene" uid="uid://dkm6fp6dtcrlc" path="res://skill_row_template.tscn" id="6_4ho5g"]
 [ext_resource type="FontFile" uid="uid://dk1mgmaxatsv5" path="res://Fonts/GraenMetal-Regular.otf" id="6_6sci0"]
 [ext_resource type="Texture2D" uid="uid://c3ch8mop8wckj" path="res://Assets/button textures/male_dim.png" id="7_1tibr"]
 [ext_resource type="FontFile" uid="uid://cdcur7rg5m1pf" path="res://Fonts/PowerofDragon-Regular.ttf" id="7_f5sdv"]
@@ -35,11 +36,18 @@
 [ext_resource type="Texture2D" uid="uid://cm85fwmnq8nta" path="res://Assets/race menu images/l3.png" id="32_qkt4k"]
 [ext_resource type="FontFile" uid="uid://bkwy5uwtb5vwv" path="res://Fonts/BLKCHCRY.TTF" id="33_jfiu4"]
 [ext_resource type="Script" uid="uid://bj6vcdjg5b765" path="res://stat_row.gd" id="33_qkt4k"]
+[ext_resource type="Theme" uid="uid://duq5x3hcm7q1y" path="res://Templates/ToolTipTheme.tres" id="33_w31ru"]
 [ext_resource type="Texture2D" uid="uid://gb6i20jfm54d" path="res://Assets/race menu images/overview V5.png" id="36_te5en"]
 [ext_resource type="Texture2D" uid="uid://beg3frvwqbu0o" path="res://Assets/race menu images/l7.png" id="37_8vkwy"]
 [ext_resource type="Texture2D" uid="uid://cwsgjjtm0lc6e" path="res://Assets/race menu images/MLE.png" id="38_svsja"]
 [ext_resource type="FontFile" uid="uid://df3xxc1u5wnhd" path="res://Fonts/protonema.regular.ttf" id="39_8vkwy"]
 [ext_resource type="Texture2D" uid="uid://c3kqotld7fr5j" path="res://Assets/race menu images/height.png" id="39_dqba6"]
+[ext_resource type="Script" uid="uid://8707scf3jk6s" path="res://texturetooltip.gd" id="39_qvb7c"]
+[ext_resource type="Script" uid="uid://ekkj2n201soo" path="res://mle_text.gd" id="40_svsja"]
+[ext_resource type="Script" uid="uid://k3fu1e1y70yw" path="res://avgh_text.gd" id="42_dqba6"]
+[ext_resource type="Script" uid="uid://bnsfdby5aur32" path="res://skills_grid.gd" id="45_53hxt"]
+[ext_resource type="Texture2D" uid="uid://wj5qlgnmb5ly" path="res://Assets/race menu images/l1.png" id="46_lbgyc"]
+[ext_resource type="Script" uid="uid://7gvu4axsstu0" path="res://jumpmessage.gd" id="47_sqtmk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
 texture = ExtResource("1_b8ifu")
@@ -104,34 +112,6 @@ bg_color = Color(0.42304435, 0.3965867, 0.034280743, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2wew"]
 bg_color = Color(0.017020663, 0.017020686, 0.017020678, 0.41400003)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkt4k"]
-bg_color = Color(0.1855, 0.35200825, 0.53, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.21666989, 0.5315571, 0.75196767, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-corner_detail = 5
-
-[sub_resource type="Theme" id="Theme_qkt4k"]
-TooltipLabel/colors/font_color = Color(0.9612289, 0.961229, 0.9612289, 1)
-TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
-TooltipLabel/colors/font_shadow_color = Color(0, 0, 0, 0)
-TooltipLabel/constants/line_spacing = -3
-TooltipLabel/font_sizes/font_size = 17
-TooltipLabel/fonts/font = ExtResource("29_r2wew")
-TooltipPanel/colors/title_color = Color(0, 0, 0, 1)
-TooltipPanel/colors/title_outline_modulate = Color(0, 0, 0, 1)
-TooltipPanel/constants/title_height = 0
-TooltipPanel/constants/title_outline_size = 0
-TooltipPanel/font_sizes/title_font_size = 16
-TooltipPanel/fonts/title_font = null
-TooltipPanel/styles/panel = SubResource("StyleBoxFlat_qkt4k")
-
 [node name="Control" type="Control" unique_id=1210271518]
 layout_mode = 3
 anchors_preset = 15
@@ -142,7 +122,7 @@ grow_vertical = 2
 script = ExtResource("1_f5sdv")
 metadata/_edit_lock_ = true
 metadata/_edit_horizontal_guides_ = [408.0, 445.0, 699.0, 397.0]
-metadata/_edit_vertical_guides_ = [310.0, 877.0, 393.0]
+metadata/_edit_vertical_guides_ = [310.0, 877.0]
 
 [node name="bg" type="Panel" parent="." unique_id=887690729]
 layout_mode = 1
@@ -208,6 +188,13 @@ offset_right = 385.0
 offset_bottom = 50.0
 target_scene = "res://Main Menu.tscn"
 metadata/_edit_lock_ = true
+
+[node name="Skilltemplate" parent="." unique_id=1175408231 instance=ExtResource("6_4ho5g")]
+layout_mode = 0
+offset_left = -201.0
+offset_top = 251.0
+offset_right = -73.0
+offset_bottom = 285.0
 
 [node name="selection" type="CanvasGroup" parent="." unique_id=1048020640]
 metadata/_edit_lock_ = true
@@ -368,7 +355,7 @@ offset_bottom = 118.0
 scale = Vector2(1.039403, 1.039403)
 theme_override_fonts/font = ExtResource("9_qeios")
 theme_override_font_sizes/font_size = 80
-text = "Human"
+text = "RaceName"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
@@ -490,7 +477,7 @@ offset_right = 143.0
 offset_bottom = 230.0
 scale = Vector2(0.92, 0.92)
 pivot_offset_ratio = Vector2(0.5, 0.5)
-theme = SubResource("Theme_qkt4k")
+theme = ExtResource("33_w31ru")
 theme_override_constants/separation = -2
 script = ExtResource("31_qkt4k")
 negative_color = Color(0.76, 0.152, 0.18240009, 1)
@@ -659,6 +646,7 @@ metadata/_edit_lock_ = true
 
 [node name="MLE" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=1800984207]
 position = Vector2(0, 3)
+metadata/_edit_lock_ = true
 
 [node name="MLE" type="TextureRect" parent="TabContainer/Stats & Skills/MLE" unique_id=327898745]
 offset_left = 177.0
@@ -666,72 +654,182 @@ offset_top = 48.0
 offset_right = 630.0
 offset_bottom = 505.0
 scale = Vector2(0.11, 0.11)
+tooltip_text = "Individuals of this race may live beyond this age, although encountering a Dracosire would be likelier."
+theme = ExtResource("33_w31ru")
 texture = ExtResource("38_svsja")
+script = ExtResource("39_qvb7c")
+tooltip_max_width = 180.0
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="MLEtitle" type="Label" parent="TabContainer/Stats & Skills/MLE" unique_id=1225376223]
-offset_left = 224.91498
-offset_top = 51.13501
-offset_right = 340.91498
+offset_left = 223.91498
+offset_top = 50.13501
+offset_right = 345.91498
 offset_bottom = 74.13501
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("33_jfiu4")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 19
 text = "Life Expectancy"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="MLEtext" type="RichTextLabel" parent="TabContainer/Stats & Skills/MLE" unique_id=618178569]
-offset_left = 229.0
-offset_top = 72.0
-offset_right = 326.0
-offset_bottom = 93.0
-theme_override_colors/default_color = Color(0.44279996, 0.73827326, 0.82, 1)
+unique_name_in_owner = true
+offset_left = 245.0
+offset_top = 71.0
+offset_right = 315.0
+offset_bottom = 92.0
+theme_override_colors/default_color = Color(0.3738, 0.77815664, 0.89, 1)
 theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.27022198, 0.40392157)
 theme_override_fonts/normal_font = ExtResource("39_8vkwy")
-theme_override_font_sizes/normal_font_size = 22
-text = "100 years"
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "{lifespan}"
 scroll_active = false
-horizontal_alignment = 1
+horizontal_alignment = 2
+script = ExtResource("40_svsja")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="AVGH" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=1074172999]
 position = Vector2(221, 3)
+metadata/_edit_lock_ = true
 
 [node name="AVGH" type="TextureRect" parent="TabContainer/Stats & Skills/AVGH" unique_id=1540870858]
-offset_left = 177.0
+offset_left = 173.0
 offset_top = 48.0
-offset_right = 630.0
+offset_right = 626.0
 offset_bottom = 505.0
 scale = Vector2(0.11, 0.11)
+tooltip_text = "Height range within which an individual of this race is neither affected by nor at risk of long-term health complications.  "
+theme = ExtResource("33_w31ru")
 texture = ExtResource("39_dqba6")
+script = ExtResource("39_qvb7c")
+tooltip_max_width = 180.0
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="AVGHtitle" type="Label" parent="TabContainer/Stats & Skills/AVGH" unique_id=1717915789]
-offset_left = 224.91498
-offset_top = 51.13501
-offset_right = 340.91498
-offset_bottom = 74.13501
+offset_left = 219.91498
+offset_top = 48.13501
+offset_right = 339.91498
+offset_bottom = 72.13501
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("33_jfiu4")
-theme_override_font_sizes/font_size = 18
-text = "Average Height"
+theme_override_font_sizes/font_size = 19
+text = "Height Range"
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="AVGHtext" type="RichTextLabel" parent="TabContainer/Stats & Skills/AVGH" unique_id=560480411]
-offset_left = 229.0
-offset_top = 72.0
-offset_right = 338.0
-offset_bottom = 109.0
-theme_override_colors/default_color = Color(0.5158374, 0.79079187, 0.86911005, 1)
+unique_name_in_owner = true
+offset_left = 223.0
+offset_top = 71.0
+offset_right = 341.0
+offset_bottom = 108.0
+theme_override_colors/default_color = Color(0.7006436, 0.35414055, 0.93233097, 1)
 theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.27022198, 0.40392157)
+theme_override_constants/line_separation = -4
 theme_override_fonts/normal_font = ExtResource("39_8vkwy")
-theme_override_font_sizes/normal_font_size = 22
-text = "AAAAAAAAAA"
+bbcode_enabled = true
+text = "{avgh}"
 scroll_active = false
 horizontal_alignment = 1
+script = ExtResource("42_dqba6")
 metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="TitleSkills" type="CanvasGroup" parent="TabContainer/Stats & Skills" unique_id=281445100]
+position = Vector2(287, 97)
+metadata/_edit_lock_ = true
+
+[node name="C101" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleSkills" unique_id=783124490]
+modulate = Color(0.9551067, 0.9856227, 0.994562, 1)
+position = Vector2(83, 27)
+scale = Vector2(0.07, 0.058)
+texture = ExtResource("30_jfiu4")
+metadata/_edit_lock_ = true
+
+[node name="TitleText" type="Label" parent="TabContainer/Stats & Skills/TitleSkills" unique_id=640998029]
+offset_left = 12.0
+offset_top = 15.0
+offset_right = 162.0
+offset_bottom = 47.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0.7426593, 0.59696573, 0.28249776, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 21
+text = "Skill Modifiers"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="L1" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleSkills" unique_id=179478442]
+modulate = Color(0.74509805, 0.5686275, 0.18431373, 1)
+position = Vector2(-63, 29)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("46_lbgyc")
+metadata/_edit_lock_ = true
+
+[node name="L2" type="Sprite2D" parent="TabContainer/Stats & Skills/TitleSkills" unique_id=1026063345]
+modulate = Color(0.74509805, 0.5686275, 0.18431373, 1)
+position = Vector2(230, 29)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("46_lbgyc")
+metadata/_edit_lock_ = true
+
+[node name="skillcontainer" type="ScrollContainer" parent="TabContainer/Stats & Skills" unique_id=1358556739]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 151.0
+offset_right = 551.0
+offset_bottom = 251.0
+horizontal_scroll_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="SkillsGrid" type="HBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer" unique_id=1942010884 node_paths=PackedStringArray("no_skills_message")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+script = ExtResource("45_53hxt")
+skill_row_template = ExtResource("6_4ho5g")
+no_skills_message = NodePath("../../MessageContainer")
+
+[node name="PositiveSkills" type="VBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer/SkillsGrid" unique_id=63363323]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="NegativeSkills" type="VBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer/SkillsGrid" unique_id=683163476]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MessageContainer" type="CenterContainer" parent="TabContainer/Stats & Skills" unique_id=858386670 node_paths=PackedStringArray("target")]
+layout_mode = 0
+offset_left = -711.0
+offset_top = -67.0
+offset_right = -429.0
+offset_bottom = -13.0
+mouse_filter = 2
+script = ExtResource("47_sqtmk")
+target = NodePath("../skillcontainer")
+
+[node name="NoSkillMessage" type="Label" parent="TabContainer/Stats & Skills/MessageContainer" unique_id=2106726250]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 0.61960787)
+theme_override_colors/font_outline_color = Color(0.7987912, 0.7987912, 0.79879117, 0.7607843)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 19
+text = "No remarkable skill proficiencies..."
 
 [node name="Assets & Handicaps" type="TabBar" parent="TabContainer" unique_id=513248547]
 visible = false

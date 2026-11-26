@@ -1,0 +1,37 @@
+{
+  "nercana": {
+    "plane_type": "Void/Arcane plane",
+    "description": "First plane of residence to the Jinn, they spent the longest time there, where their connection to mana really took shape over centuries. This plane, where magic manifested spontaneously, taught numerous generations how to resist it best.",
+    "tattoos": ["spellsight", "unbreakable_mana"]
+  },
+  "da'o": {
+    "plane_type": "Desert plane",
+    "description": "When Nercana finally rejected the Jinn, they found themselves in this plane where mana and water were rare. For decades, the Jinn of Da'o learned to recover more mana, and to share what little they had to better survive together.",
+    "tattoos": ["grant", "higher_restoration"]
+  },
+  "merid": {
+    "plane_type": "Ocean plane",
+    "description": "In this ocean plane, Jinn fought all kinds of aquatic creatures to survive. Although short, their stay there had them hone their reflexes and combative abilities. Merid Jinn are typically the warriors of their communities.",
+    "tattoos": ["haste", "evasion"]
+  },
+  "ifreet": {
+    "plane_type": "Hell plane",
+    "description": "The ocean plane rejected the Jinn only for them to find themselves in this realm of fire and lava. Instead of fighting for sustenance, Jinn had to face hordes of demons, and fought only for survival. The years spent there taught the Jinn to stay together and to tend to each other's wounds, as well as good methods to prevent demons from cursing them...",
+    "tattoos": ["instability", "channeled_healing"]
+  },
+  "genie": {
+    "plane_type": "Storm plane",
+    "description": "Their second longest stay was in this realm where fast winds would sweep anything over the level, dead soil. Over centuries, they learned to make themselves and their possessions lighter, and lived on flying villages guided by the will of the typhoons. Once this lifestyle adopted, the only problem that remained was the occasional but intense thunderstorms. Here, their connection with the element of air intensified. Once back on the material plane, Genie abilities would prove the most useful for their lives on the steep peaks of Vhaatur, making the race adopt a deformation of that name: Jinn.",
+    "tattoos": ["weightless", "feather_touch"]
+  },
+  "khayal": {
+    "plane_type": "Abyssal plane",
+    "description": "Abyssal or chthonic planes are the most dangerous. Paradoxically, light is the element defining these planes with its absence, and the intangible horrors like hyms, specters and eldritch spawn that inhabit it. Of the Jinn rejected into this realm, few but enough survived to tell its tale by adapting to be able to touch and see its grim inhabitants.",
+    "tattoos": ["eyes_of_the_magus", "ghastly"]
+  },
+  "sarab": {
+    "plane_type": "Void plane",
+    "description": "This void plane where Jinn found themselves was opposite to Nercana by the scarcity of its magic. The Jinn who found themselves here were already affected by the harsh nature of Khayal, and unlike their ancestors in Da'o relied on more aggressive methods to fuel their mana resources. They used their weightlessness to navigate the floating rocks and colossal corpses, and took the mana of any creature they preyed upon before consuming its flesh. Rejected by this plane, the Jinn finally found themselves back in their original one.",
+    "tattoos": ["siphon", "drain"]
+  }
+}

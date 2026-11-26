@@ -1,0 +1,155 @@
+{
+  "unguided": {
+    "roll": 1,
+    "description": "This character always goes in the wrong direction, unless it's a tunnel, then it's a 50% chance. Not everyone suffering from this condition is aware of it.",
+    "effects": [
+      {"flag": "unguided"}
+    ]
+  },
+  "sensory_loss": {
+    "roll": 2,
+    "description": "The character either becomes less perceptive, getting [b]disadvantage on all perception rolls[/b], or completely loses one of these 4 senses (roll 1d4): [b]Sight:[/b] colors, light,… [b]Hearing:[/b] sounds, balance. [b]Smelling:[/b] smells, tastes. [b]Touch:[/b] pain, temperature, contact.",
+    "effects": [
+    ],
+    "choices": {
+      "less_perceptive": [{"modifier": "perception_advantage", "value": -1}],
+      "sight": [{"flag": "lost_sight"}],
+      "hearing": [{"flag": "lost_hearing"}],
+      "smelling": [{"flag": "lost_smell"}],
+      "touch": [{"flag": "lost_touch"}]
+    }
+  },
+  "addiction": {
+    "roll": 3,
+    "description": "The character develops a substance addiction. It must be regularly consumed, the intervals depending on how hard it is, or withdrawal symptoms that are up to the DM to decide will show up. This substance, if used in potions, will only give half of its effects upon consumption. This addiction can't be quit.",
+    "effects": [
+      {"flag": "addiction"}
+    ]
+  },
+  "weird_voice": {
+    "roll": 4,
+    "description": "Worst nightmare for dwarves, not much of a change for gremlins, the character resurrects with a weird voice, be it screechy, from the opposite sex, nasal,… Sometimes, even the accent changes. Gives [b]disadvantage on any social rolls involving dialogue[/b].",
+    "effects": [
+      {"modifier": "dialogue_social_advantage", "value": -1}
+    ]
+  },
+  "voices_&_nightmares": {
+    "roll": 5,
+    "description": "Even on successful perception rolls, the character now perceives things that aren't real. They will see figures, hear voices talking to them, smell nonexistent enemies… [b]Long rests are now short rests[/b], mechanically and narratively.",
+    "effects": [
+      {"flag": "hallucinations"},
+      {"flag": "restless"}
+    ]
+  },
+  "latecomer": {
+    "roll": 6,
+    "description": "The character loses grasp of time, and will always be late. Even in fights, he [b]always plays last[/b] because his mind wanders during the first seconds. Tactical Initiative is unable to help his case.",
+    "effects": [
+      {"flag": "always_last"}
+    ]
+  },
+  "weakened_flesh": {
+    "roll": 7,
+    "description": "The character's body never fully recovers from his resurrection. They lose [b]CONST+Level HP[/b] permanently, and always get [b]disadvantage on their physical RR[/b].",
+    "effects": [
+      {"modifier": "hp_bonus", "formula": "-({cnst}+{g_lvl})"},
+      {"modifier": "phy_RR_advantage", "value": -1}
+    ]
+  },
+  "weakened_spirit": {
+    "roll": 8,
+    "description": "The character's mind never fully recovers from his resurrection. They lose [b]PSY+Level MP[/b] permanently, and always get [b]disadvantage on their magical RR[/b].",
+    "effects": [
+      {"modifier": "mp_bonus", "formula": "-({psy}+{g_lvl})"},
+      {"modifier": "mag_RR_advantage", "value": -1}
+    ]
+  },
+  "healing_tolerance": {
+    "roll": 9,
+    "description": "While seemingly unchanged, the resurrected character quickly shows signs of slowed healing, with wounds staying open and bones struggling to mend. All natural and magical healing is [b]halved[/b].",
+    "effects": [
+      {"modifier": "healing_received_mult", "value": 0.5}
+    ]
+  },
+  "cotton_legs": {
+    "roll": 10,
+    "description": "Upon resurrecting, the character's legs feel heavy and numb. This won't go away, and they won't either as their speed is [b]halved[/b].",
+    "effects": [
+      {"modifier": "speed_mult", "value": 0.5}
+    ]
+  },
+  "out_of_breath": {
+    "roll": 11,
+    "description": "The character loses [b]1 stamina[/b]. So sorry.",
+    "effects": [
+      {"modifier": "stamina_bonus", "value": -1}
+    ]
+  },
+  "talent_loss": {
+    "roll": 12,
+    "description": "The resurrected character loses what makes him special, completely and utterly losing or forgetting his talent.",
+    "effects": [
+      {"flag": "talent_loss"}
+    ]
+  },
+  "homely": {
+    "roll": null,
+    "description": "Generally considered unappealing. This handicap can cost a character some social opportunities.",
+    "effects": [
+      {"flag": "ugly"}
+    ]
+  },
+  "chubby": {
+    "roll": null,
+    "description": "[b]+1[/b] to base weight value.",
+    "effects": [
+      {"modifier": "weight_mod", "value": 1}
+    ]
+  },
+  "self-conscious": {
+    "roll": null,
+    "description": "Although they may never admit it, each failure on an active (voluntary) dice roll causes this character to take [b]1d4 psychic damage[/b], [b]1d6[/b] starting at level 6, [b]1d8[/b] at level 10. This stops happening below CONST HP.",
+    "effects": [
+      {"flag": "self_conscious"}
+    ]
+  },
+  "short_breath": {
+    "roll": null,
+    "description": "This character wheezes when they breathe too fast, and can't hold their breath. [b]Disadvantage on suffocation RRs[/b].",
+    "effects": [
+      {"modifier": "phy_RR_suffoc_advantage", "value": -1}
+    ]
+  },
+  "flabby": {
+    "roll": null,
+    "description": "Max carry weight and hand to hand damage are [b]halved[/b].",
+    "effects": [
+      {"modifier": "carry_capacity_mult", "value": 0.5},
+      {"modifier": "h2h_dmg_mult", "value": 0.5}
+    ]
+  },
+  "nearsighted": {
+    "roll": null,
+    "description": "All class ability ranges are [b]divided by half[/b], as well as weapon range.",
+    "effects": [
+      {"modifier": "ability_range_mult", "value": 0.5},
+      {"modifier": "weapon_range_mult", "value": 0.5}
+    ]
+  },
+  "frail": {
+    "roll": null,
+    "description": "Minus [b]5%[/b], [b]10%[/b] and [b]15%[/b] on light, medium and heavy armor values respectively.",
+    "effects": [
+      {"modifier": "light_armor_bonus", "value": -5},
+      {"modifier": "medium_armor_bonus", "value": -10},
+      {"modifier": "heavy_armor_bonus", "value": -15}
+    ]
+  },
+  "vanity": {
+    "roll": null,
+    "description": "This character's attire must reflect their wealth. If they don't buy a new outfit costing at least a third of their savings when arriving in a new town, OR each month living in a town, they drastically lose confidence. This results in [b]-5 Charisma[/b] and [b]disadvantage on all social rolls[/b].",
+    "effects": [
+      {"flag": "vanity"}
+    ]
+  }
+}

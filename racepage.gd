@@ -1,6 +1,5 @@
 extends Control
 
-
 # Find your empty vertical stack where the menu list goes
 @onready var buttons_stack: VBoxContainer = %racebuttons
 
@@ -11,6 +10,13 @@ extends Control
 @onready var race_title: Label = $Affichage/RaceTitle
 @onready var description_label: DescriptionDisplay = $Affichage/StatScroller/Description
 @onready var stats_panel: VBoxContainer = %Stats
+
+# Lifespan display (MLE)
+@onready var lifespan_label: RichTextLabel = %MLEtext
+# Height range display (AVGH)
+@onready var avgh_label: RichTextLabel = %AVGHtext
+# Skills
+@onready var skills_grid: HBoxContainer = %SkillsGrid
 
 func _ready() -> void:
 	# FORCE THE CONTAINERS TO STRETCH: 
@@ -65,8 +71,18 @@ func display_race_details(race_id: String) -> void:
 	# 2. Construct the path to your txt file
 	var file_path = "res://GameData/RaceResources/txts/" + race_id + ".txt"
 	
-	# 2.5. For the stats
+	# 2.1. For the stats
 	stats_panel.display_race_stats(race_id)
+	
+	# 2.2. For the MLE (lifespan)
+	var lifespan_value = DataManager.races.get(race_id, {}).get("lifespan", null)
+	lifespan_label.display_lifespan(lifespan_value)
+	# 2.3. For the average height
+	var txtheight_value = DataManager.races.get(race_id, {}).get("txtheight", null)
+	avgh_label.display_average_height(txtheight_value)
+	# 2.4. Skills
+	stats_panel.display_race_stats(race_id)
+	skills_grid.display_race_skills(race_id)
 	
 	# 3. Safety Check: If the file exists, read it.
 	if FileAccess.file_exists(file_path):

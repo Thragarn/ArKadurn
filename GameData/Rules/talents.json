@@ -1,0 +1,185 @@
+{
+  "talented": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "[b]15% bonus[/b] on a skill of your choice.",
+    "effects": [
+      {"modifier": "chosen_skill_bonus", "value": 15}
+    ]
+  },
+  "unlikely_hybrid": {
+    "creation_only": true,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "This talent is mandatory if a character is the hybrid of two distant races.",
+    "effects": [
+      {"flag": "hybrid"}
+    ]
+  },
+  "extra_stats": {
+    "creation_only": false,
+    "max_stacks": 2,
+    "races": "all",
+    "description": "Gain [b]5 extra stat points[/b]. Now, one of your stats can go up to [b]18[/b] and another one to [b]17[/b] at the character's creation. Can be taken a second time upon reaching level 5.",
+    "effects": [
+      {"modifier": "stat_points", "value": 5},
+      {"flag": "raised_stat_caps"}
+    ]
+  },
+  "heroic_death": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "When a PC falls to 0 HP, they can, instead of falling unconscious, decide to die a heroic death. A piercing attack won't touch anyone behind them, and they get to deal a blow that is [b]guaranteed to hit[/b] its target and deal [b]double its maximum damage[/b]. This attack can be boosted by any other ability with stamina and mana costs being null. Following a resurrection, the player gets to choose their handicap.",
+    "effects": [
+      {"grants_abilities": ["heroic_death"]},
+      {"flag": "choose_resurrection_handicap"}
+    ]
+  },
+  "bard": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Bards will sing stories of the glorious adventures of their companions, but the best among them are even able to use their art directly with 3 abilities: [b]Inspiration:[/b] give advantage or disadvantage to a target of your choice. Usable once a turn for 0 stamina, and [b]2+Level[/b] times a day. [b]Verbal Violence:[/b] mock an enemy with a persuasion roll and deal [b](1+1 per 2 levels)dX[/b] of emotional damage, X based on Charisma. Costs [b]2 stamina[/b]. [b]Pleasant Rest:[/b] double the base HP and MP gains granted by short and long rests. These abilities can be manifested as a poem, a ballad, or even a dance. If not taken at creation, Art needs to have a minimum score of [b]80%[/b].",
+    "effects": [
+      {"grants_abilities": ["inspiration", "verbal_violence", "pleasant_rest"]}
+    ]
+  },
+  "pretty": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "This character is pretty. This sometimes affects their interactions, allowing more seducing opportunities. Isn't a creation talent to allow for glow ups.",
+    "effects": [
+      {"flag": "pretty"}
+    ]
+  },
+  "odorless": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "As long as they keep a decent hygiene, this character has a body which can't be detected by smell.",
+    "effects": [
+      {"flag": "odorless"}
+    ]
+  },
+  "mule": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Carry capacity [b]doubled[/b]. If your team asks you to take this, they're not your friends.",
+    "effects": [
+      {"modifier": "carry_capacity_mult", "value": 2}
+    ]
+  },
+  "forest_dude": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Never get lost in forests. [b]Advantage[/b] to the athletics checks to climb trees.",
+    "effects": [
+      {"flag": "forest_folk"},
+      {"modifier": "athl_climb_tree_advantage", "value": 1}
+    ]
+  },
+  "art_of_the_initiative": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Can reroll the initiative d10. In addition, bonus of [b]Level[/b] to the final score.",
+    "effects": [
+      {"flag": "initiative_reroll"},
+      {"modifier": "initiative_bonus", "formula": "{g_lvl}"}
+    ]
+  },
+  "hp_bag": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Gain an extra [b](CONST/4) HP[/b] per level.",
+    "effects": [
+      {"modifier": "hp_bonus", "formula": "{cnst}/4*{g_lvl}"}
+    ]
+  },
+  "mp_bag": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Gain an extra [b](PSY/4) MP[/b] per level.",
+    "effects": [
+      {"modifier": "mp_bonus", "formula": "{psy}/4*{g_lvl}"}
+    ]
+  },
+  "exotic_mage": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "Removes the disadvantage (if double, becomes simple) from the casting method.",
+    "effects": [
+      {"modifier": "casting_method_advantage", "value": 1}
+    ]
+  },
+  "meticulous": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "The artisan gains an [b]extra reroll[/b] for any craft, upgrade or repair.",
+    "effects": [
+      {"modifier": "craft_rerolls", "value": 1}
+    ]
+  },
+  "sociopathic": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": "all",
+    "description": "The emotions of this character, if existing, work differently. [b]Total immunity to induced feelings[/b], be they by magic or potion. However, they cannot have emotional long and short term objectives. Be warned, this is hard to roleplay beyond being edgy.",
+    "effects": [
+      {"flag": "induced_feeling_immunity"},
+      {"flag": "apathetic"}
+    ]
+  },
+  "psychic_powers": {
+    "creation_only": true,
+    "max_stacks": 1,
+    "races": ["human", "illithid"],
+    "description": "Some rare humans and illithids are blessed with psychic powers without being cursed with vampirism. [b]Minor Arcana only[/b]. However, both these races can get \"offered\" a major arcana. In exchange for their brain being so powerful, natural psychics have the [b]Weakened Flesh[/b] handicap.",
+    "effects": [
+      {"flag": "psychic_minor_arcana"},
+      {"grants_handicaps": ["weakened_flesh"]}
+    ]
+  },
+  "ancient_lineage_sagan": {
+    "creation_only": true,
+    "max_stacks": 1,
+    "races": ["human"],
+    "description": "Rare humans have an old bloodline which possesses the powers to control their own blood. This power is hereditary, but can jump over one or multiple generations, and is generally considered a bad omen for those around the red-eyed newborn. These red irises are the only way to distinguish this subrace. Because of high blood pressure in the cranium, Sagans suffer the [b]Weakened Spirit[/b] handicap.",
+    "effects": [
+      {"flag": "sagan"},
+      {"flag": "bleedless"},
+      {"grants_handicaps": ["weakened_spirit"]}
+    ]
+  },
+  "phytogenic": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": ["goblin"],
+    "description": "Goblins aren't green for no reason. Some are in fact so green that they achieve photosynthesis. This photosynthesis is only sufficient to compensate one meal unless they lie down all day, and compensates their need for breathing as long as sufficient lighting is provided.",
+    "effects": [
+      {"flag": "photosynthesis"}
+    ]
+  },
+  "colossus": {
+    "creation_only": false,
+    "max_stacks": 1,
+    "races": ["giant"],
+    "description": "The giant becomes gigantic even for his race. Height of [b](5+Level) meters[/b], he gains another [b]1dX[/b] to all attacks, areas of effect are [b]tripled[/b], and he gains [b]10 instead of 7 HP[/b] each level. However, all attacks made against him gain [b]advantage[/b].",
+    "effects": [
+      {"modifier": "height_set", "formula": "5+{g_lvl}"},
+      {"modifier": "attack_dice_bonus", "value": 1},
+      {"modifier": "aoe_mult", "value": 3},
+      {"modifier": "hp_bonus", "formula": "3*{g_lvl}"},
+      {"modifier": "enemy_attack_advantage", "value": 1}
+    ]
+  }
+}

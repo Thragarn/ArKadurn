@@ -1,0 +1,114 @@
+{
+  "spellsight": {
+    "plane": "nercana",
+    "mp_cost": null,
+    "description": "Allows to passively perceive delayed spells using any of one's senses, with a difficulty of [b](40+caster's rank*5)%[/b].",
+    "effects": [
+      {"flag": "spellsight"}
+    ]
+  },
+  "unbreakable_mana": {
+    "plane": "nercana",
+    "mp_cost": null,
+    "description": "Antimagic zones don't stop a Jinn with this tattoo, but cause them to have a [b]disadvantage[/b].",
+    "effects": [
+      {"flag": "unbreakable_mana"}
+    ]
+  },
+  "grant": {
+    "plane": "da'o",
+    "mp_cost": "Variable",
+    "description": "Allows the Jinn to give of their own mana. They can give it by packets of [b]5 MP[/b], of which [b]4 MP[/b] reach their target. A Jinn can transfer a maximum of [b]PSY/2[/b] per stamina, rounded down after defining total stamina use.",
+    "effects": [
+      {"grants_abilities": ["grant"]}
+    ]
+  },
+  "higher_restoration": {
+    "plane": "da'o",
+    "mp_cost": null,
+    "description": "Multiplies the mana gain from short and long rests by [b]{rest_mp_mult}[/b].",
+    "effects": [
+      {"modifier": "rest_mp_mult", "value": 2}
+    ]
+  },
+  "haste": {
+    "plane": "merid",
+    "mp_cost": "5+Level",
+    "description": "Mana flowing through the Jinn quickens them. They gain [b]1 stamina for 2 turns[/b]. Usable once every short rest.",
+    "effects": [
+      {"grants_abilities": ["haste"]}
+    ]
+  },
+  "evasion": {
+    "plane": "merid",
+    "mp_cost": "8+Level",
+    "description": "Usable as a reaction, it allows the Jinn to [b]dodge any attack[/b], no matter if it's a critical success. Doesn't work on heroic death attacks. Usable once every short rest.",
+    "effects": [
+      {"grants_abilities": ["evasion"]}
+    ]
+  },
+  "instability": {
+    "plane": "ifreet",
+    "mp_cost": "5+Level*2",
+    "description": "Creates a zone of magic instability around the Jinn that follows them around without affecting them, with a radius of [b]5+Level*3 meters[/b]. In this zone, [b]mana spent on any spell or ability is doubled[/b]. Takes 2 stamina to activate, lasts three turns, once per long rest.",
+    "effects": [
+      {"grants_abilities": ["instability"]}
+    ]
+  },
+  "channeled_healing": {
+    "plane": "ifreet",
+    "mp_cost": "Target's MP",
+    "description": "The Jinn channels their target's own mana to make them heal themselves. For each [b]2 MP[/b] of the target spent, they heal [b]1d8 HP[/b]. Can't roll more than [b]Level d8[/b] per stamina. Must touch the wound.",
+    "effects": [
+      {"grants_abilities": ["channeled_healing"]}
+    ]
+  },
+  "weightless": {
+    "plane": "genie",
+    "mp_cost": "8",
+    "description": "Jinn can make their bodies go to a [b]weight value of 0[/b]. They become unaffected by gravity, and can move by floating around in the air. Their flight speed has a speed multiplier of [b]*0,75[/b]. Activation and deactivation are at will, but both take 1 stamina.",
+    "effects": [
+      {"grants_abilities": ["weightless"]}
+    ]
+  },
+  "feather_touch": {
+    "plane": "genie",
+    "mp_cost": "3 per 0,5 WV",
+    "description": "Make something lighter by touching it for one minute. Can't make something go lower than half its weight value, rounded down. This effect doesn't stack with multiple Jinn. Takes 1 stamina.",
+    "effects": [
+      {"grants_abilities": ["feather_touch"]}
+    ]
+  },
+  "eyes_of_the_magus": {
+    "plane": "khayal",
+    "mp_cost": "6 per turn",
+    "description": "The eyes of the Jinn illuminate, as they are now capable of seeing the interior mana flow of all beings, allowing them to [b]see even invisible creatures[/b]. Striking a mana node with Ghastly makes your target take [b]a third of its HP loss as MP loss[/b] instead.",
+    "effects": [
+      {"grants_abilities": ["eyes_of_the_magus"]}
+    ]
+  },
+  "ghastly": {
+    "plane": "khayal",
+    "mp_cost": "4",
+    "description": "When making a physical attack, a Jinn can imbue it with a specific flow of mana that allows it to [b]affect intangible beings[/b], or strike a mana node seen by the Eyes of the Magus.",
+    "effects": [
+      {"grants_abilities": ["ghastly"]}
+    ]
+  },
+  "siphon": {
+    "plane": "sarab",
+    "mp_cost": null,
+    "description": "For one stamina, Jinn can aggressively siphon all the mana around them in order to instantly gain [b]PSY*1,5 MP[/b]. This process however strains their body causing them to take [b]PSY/2 damage[/b]. Once per short rest.",
+    "effects": [
+      {"grants_abilities": ["siphon"]}
+    ]
+  },
+  "drain": {
+    "plane": "sarab",
+    "mp_cost": null,
+    "description": "By touching a creature, you can drain its mana, making them lose it by packets of [b]5 MP[/b]. You gain in exchange [b]3 MP[/b] and take [b]2 HP damage[/b] per packet. A Jinn can drain a maximum of [b]PSY/2[/b] per stamina, rounded after defining how much stamina is used. This ability can be used to cancel spells, working by touching the catalyst or at a 5 meter distance from magic circles.",
+    "effects": [
+      {"grants_abilities": ["drain"]}
+    ]
+  }
+}
