@@ -101,7 +101,7 @@
   },
   "chubby": {
     "roll": null,
-    "description": "[b]+1[/b] to base weight value.",
+    "description": "[b]+{weight_mod}[/b] to base weight value.",
     "effects": [
       {"modifier": "weight_mod", "value": 1}
     ]
@@ -130,15 +130,15 @@
   },
   "nearsighted": {
     "roll": null,
-    "description": "All class ability ranges are [b]divided by half[/b], as well as weapon range.",
+    "description": "All class ability ranges are [b]halved[/b], as well as ranged weapon range.",
     "effects": [
       {"modifier": "ability_range_mult", "value": 0.5},
-      {"modifier": "weapon_range_mult", "value": 0.5}
+      {"modifier": "ranged_weapon_range_mult", "value": 0.5}
     ]
   },
   "frail": {
     "roll": null,
-    "description": "Minus [b]5%[/b], [b]10%[/b] and [b]15%[/b] on light, medium and heavy armor values respectively.",
+    "description": "Minus [b]{light_armor_bonus}%[/b], [b]{medium_armor_bonus}%[/b] and [b]{heavy_armor_bonus}%[/b] on light, medium and heavy armor values respectively.",
     "effects": [
       {"modifier": "light_armor_bonus", "value": -5},
       {"modifier": "medium_armor_bonus", "value": -10},

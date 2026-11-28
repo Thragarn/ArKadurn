@@ -2,17 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c1nwd5sorvxkx" path="res://skill_row_template.gd" id="1_s562c"]
 [ext_resource type="FontFile" uid="uid://cuihenec4ebxd" path="res://Fonts/Runavess Demo.otf" id="2_s562c"]
-[ext_resource type="FontFile" uid="uid://cdcur7rg5m1pf" path="res://Fonts/PowerofDragon-Regular.ttf" id="3_3db03"]
+[ext_resource type="FontFile" uid="uid://df3xxc1u5wnhd" path="res://Fonts/protonema.regular.ttf" id="3_s562c"]
 
 [sub_resource type="FontVariation" id="FontVariation_s562c"]
 base_font = ExtResource("2_s562c")
 spacing_top = -4
 spacing_bottom = -5
 
+[sub_resource type="FontVariation" id="FontVariation_ld1ay"]
+base_font = ExtResource("3_s562c")
+spacing_bottom = 4
+
 [sub_resource type="FontVariation" id="FontVariation_3db03"]
-base_font = ExtResource("3_3db03")
-spacing_top = -8
-spacing_bottom = -5
+base_font = SubResource("FontVariation_ld1ay")
+spacing_top = 2
 
 [node name="Skilltemplate" type="HBoxContainer" unique_id=1175408231]
 offset_left = -258.0
@@ -27,12 +30,14 @@ positive_color = Color(0.46750003, 0.85, 0.46750003, 1)
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_s562c")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 24
 text = "+10"
+vertical_alignment = 2
 
 [node name="skillname" type="Label" parent="." unique_id=732263513]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_3db03")
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 23
 text = "Knowledge (Nature)"
+vertical_alignment = 2

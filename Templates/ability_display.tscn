@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://6ujl08jt07j8"]
+
+[ext_resource type="FontFile" uid="uid://bb3og1tu2difv" path="res://Fonts/Heroking-Regular.ttf" id="1_auiij"]
+[ext_resource type="FontFile" uid="uid://biv46q8t2cbwo" path="res://Fonts/kynetic-demo.black.ttf" id="2_6cjeb"]
+
+[node name="AbilityDisplay" type="VBoxContainer" unique_id=49801848]
+custom_minimum_size = Vector2(250, 0)
+offset_left = 10.0
+offset_top = 64.0
+offset_right = 260.0
+offset_bottom = 124.0
+theme_override_constants/separation = -4
+
+[node name="Abilityhead" type="Label" parent="." unique_id=1707431178]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.18794766, 0.4604417, 0.66594404, 0.7411765)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("1_auiij")
+theme_override_font_sizes/font_size = 18
+text = "Forest Folk"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1767380268]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=877593201]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
+[node name="abilitytext" type="RichTextLabel" parent="HBoxContainer" unique_id=400357530]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/normal_font = ExtResource("2_6cjeb")
+theme_override_font_sizes/normal_font_size = 12
+text = "These niggas be tweaking cuh. They gon find yo ass."
+fit_content = true
+scroll_active = false

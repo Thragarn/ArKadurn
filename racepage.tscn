@@ -48,6 +48,10 @@
 [ext_resource type="Script" uid="uid://bnsfdby5aur32" path="res://skills_grid.gd" id="45_53hxt"]
 [ext_resource type="Texture2D" uid="uid://wj5qlgnmb5ly" path="res://Assets/race menu images/l1.png" id="46_lbgyc"]
 [ext_resource type="Script" uid="uid://7gvu4axsstu0" path="res://jumpmessage.gd" id="47_sqtmk"]
+[ext_resource type="Texture2D" uid="uid://chsyaphx8ahdi" path="res://Assets/race menu images/asset_iconos.png" id="49_or72n"]
+[ext_resource type="Texture2D" uid="uid://bwujy3e4hyirj" path="res://Assets/race menu images/handicap_iconos.png" id="50_8wgmm"]
+[ext_resource type="PackedScene" uid="uid://6ujl08jt07j8" path="res://Templates/ability_display.tscn" id="51_8wgmm"]
+[ext_resource type="Texture2D" uid="uid://dobxhr6i2oo0q" path="res://Assets/race menu images/l5.png" id="52_fb3g6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
 texture = ExtResource("1_b8ifu")
@@ -121,8 +125,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f5sdv")
 metadata/_edit_lock_ = true
-metadata/_edit_horizontal_guides_ = [408.0, 445.0, 699.0, 397.0]
-metadata/_edit_vertical_guides_ = [310.0, 877.0]
+metadata/_edit_horizontal_guides_ = [408.0, 445.0, 699.0]
+metadata/_edit_vertical_guides_ = [310.0, 877.0, 592.0]
 
 [node name="bg" type="Panel" parent="." unique_id=887690729]
 layout_mode = 1
@@ -253,15 +257,26 @@ metadata/_edit_lock_ = true
 
 [node name="RaceScroller" type="ScrollContainer" parent="selection" unique_id=22420221]
 offset_left = 27.0
-offset_top = 116.0
+offset_top = 115.0
 offset_right = 210.0
-offset_bottom = 383.0
+offset_bottom = 370.0
 horizontal_scroll_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="racebuttons" type="VBoxContainer" parent="selection/RaceScroller" unique_id=825177870]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="zoomorphs" type="CheckButton" parent="selection" unique_id=519188743]
+offset_left = 41.0
+offset_top = 369.0
+offset_right = 204.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0.7372549)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_fonts/font = ExtResource("18_tldqt")
+text = "Show zoomorphs"
+icon_alignment = 2
 
 [node name="race image" type="CanvasGroup" parent="." unique_id=1706841155]
 script = ExtResource("10_l0g61")
@@ -420,11 +435,13 @@ theme_override_colors/font_selected_color = Color(0.96474224, 0.96474224, 0.9647
 theme_override_fonts/font = ExtResource("18_tldqt")
 theme_override_font_sizes/font_size = 22
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2wew")
-current_tab = 0
+current_tab = 1
 tab_2/hidden = true
 tab_3/hidden = true
+metadata/_edit_lock_ = true
 
 [node name="Stats & Skills" type="TabBar" parent="TabContainer" unique_id=1048845481]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -486,7 +503,7 @@ metadata/_edit_lock_ = true
 
 [node name="intel" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1952192882]
 layout_mode = 2
-tooltip_text = "A sharp mind translates into masterwork crafting, and essential knowledge ranging from medicine to politics. It also somewhat affects the speed at which a character evolves."
+tooltip_text = "A sharp mind translates into masterwork crafting, and essential knowledge ranging from medicine to politics. It also affects the speed at which a character evolves."
 script = ExtResource("33_qkt4k")
 stat_key = "intel"
 
@@ -507,7 +524,7 @@ horizontal_alignment = 2
 
 [node name="charis" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=789503375]
 layout_mode = 2
-tooltip_text = "Charisma gives commanding presence and social finesse, dictating the results of persuasion, deception, and body language."
+tooltip_text = "Charisma gives commanding presence and social finesse, dictating the results of persuasion, deception, and body language. It also helps with trading prices."
 script = ExtResource("33_qkt4k")
 stat_key = "charis"
 
@@ -570,7 +587,7 @@ horizontal_alignment = 2
 
 [node name="strn" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=2145538970]
 layout_mode = 2
-tooltip_text = "High strength scales weapon damage, knockback and elemental bending power, as well as jumping distance."
+tooltip_text = "High strength gives greater damage for both melee and ranged weapons, knockback and elemental bending power, as well as jumping distance."
 script = ExtResource("33_qkt4k")
 stat_key = "strn"
 
@@ -591,7 +608,7 @@ horizontal_alignment = 2
 
 [node name="cnst" type="HBoxContainer" parent="TabContainer/Stats & Skills/Stats" unique_id=1912298688]
 layout_mode = 2
-tooltip_text = "Constitution is the base stat upon which a character's HP pool, recovery, and physical resistances scale."
+tooltip_text = "Constitution is the base stat controlling survivorship. Upon it are based the character's HP pool, recovery rates, and physical resistances."
 script = ExtResource("33_qkt4k")
 stat_key = "cnst"
 
@@ -712,23 +729,24 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="AVGHtitle" type="Label" parent="TabContainer/Stats & Skills/AVGH" unique_id=1717915789]
-offset_left = 219.91498
+offset_left = 218.91498
 offset_top = 48.13501
-offset_right = 339.91498
+offset_right = 338.91498
 offset_bottom = 72.13501
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("33_jfiu4")
 theme_override_font_sizes/font_size = 19
 text = "Height Range"
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="AVGHtext" type="RichTextLabel" parent="TabContainer/Stats & Skills/AVGH" unique_id=560480411]
 unique_name_in_owner = true
-offset_left = 223.0
+offset_left = 221.0
 offset_top = 71.0
-offset_right = 341.0
+offset_right = 339.0
 offset_bottom = 108.0
 theme_override_colors/default_color = Color(0.7006436, 0.35414055, 0.93233097, 1)
 theme_override_colors/font_shadow_color = Color(0.27022192, 0.27022192, 0.27022198, 0.40392157)
@@ -788,11 +806,10 @@ metadata/_edit_lock_ = true
 [node name="skillcontainer" type="ScrollContainer" parent="TabContainer/Stats & Skills" unique_id=1358556739]
 layout_mode = 0
 offset_left = 186.0
-offset_top = 151.0
+offset_top = 152.0
 offset_right = 551.0
-offset_bottom = 251.0
+offset_bottom = 250.0
 horizontal_scroll_mode = 0
-metadata/_edit_lock_ = true
 
 [node name="SkillsGrid" type="HBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer" unique_id=1942010884 node_paths=PackedStringArray("no_skills_message")]
 unique_name_in_owner = true
@@ -805,12 +822,12 @@ no_skills_message = NodePath("../../MessageContainer")
 [node name="PositiveSkills" type="VBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer/SkillsGrid" unique_id=63363323]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 5
 
 [node name="NegativeSkills" type="VBoxContainer" parent="TabContainer/Stats & Skills/skillcontainer/SkillsGrid" unique_id=683163476]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 5
 
 [node name="MessageContainer" type="CenterContainer" parent="TabContainer/Stats & Skills" unique_id=858386670 node_paths=PackedStringArray("target")]
 layout_mode = 0
@@ -832,10 +849,144 @@ theme_override_font_sizes/font_size = 19
 text = "No remarkable skill proficiencies..."
 
 [node name="Assets & Handicaps" type="TabBar" parent="TabContainer" unique_id=513248547]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 metadata/_tab_name = "Assets & Handicaps"
+
+[node name="Assethead" type="CanvasGroup" parent="TabContainer/Assets & Handicaps" unique_id=1592818825]
+position = Vector2(12, 0)
+
+[node name="iconasset" type="TextureRect" parent="TabContainer/Assets & Handicaps/Assethead" unique_id=434829281]
+offset_left = 53.0
+offset_top = 4.0
+offset_right = 1208.0
+offset_bottom = 1278.0
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("49_or72n")
+
+[node name="underliner" type="TextureRect" parent="TabContainer/Assets & Handicaps/Assethead" unique_id=1550410617]
+modulate = Color(0.81, 0.653535, 0.3159, 1)
+offset_left = 95.0
+offset_top = 47.0
+offset_right = 1830.0
+offset_bottom = 195.0
+scale = Vector2(0.055, 0.05)
+texture = ExtResource("37_8vkwy")
+
+[node name="asslab" type="Label" parent="TabContainer/Assets & Handicaps/Assethead" unique_id=1608325642]
+offset_left = 109.0
+offset_top = 6.0
+offset_right = 171.0
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0.4182, 0.82, 0.4182, 0.8627451)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("7_f5sdv")
+theme_override_font_sizes/font_size = 30
+text = "Assets"
+
+[node name="Handicaphead" type="CanvasGroup" parent="TabContainer/Assets & Handicaps" unique_id=729691502]
+position = Vector2(297, 0)
+
+[node name="iconhandi" type="TextureRect" parent="TabContainer/Assets & Handicaps/Handicaphead" unique_id=737995937]
+offset_left = 53.0
+offset_top = 4.0
+offset_right = 1246.0
+offset_bottom = 1278.0
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("50_8wgmm")
+
+[node name="underliner" type="TextureRect" parent="TabContainer/Assets & Handicaps/Handicaphead" unique_id=1688016301]
+modulate = Color(0.81, 0.653535, 0.3159, 1)
+offset_left = 101.0
+offset_top = 47.0
+offset_right = 1836.0
+offset_bottom = 195.0
+scale = Vector2(0.058, 0.05)
+texture = ExtResource("37_8vkwy")
+
+[node name="handlab" type="Label" parent="TabContainer/Assets & Handicaps/Handicaphead" unique_id=1022844175]
+offset_left = 109.0
+offset_top = 6.0
+offset_right = 171.0
+offset_bottom = 56.0
+theme_override_colors/font_shadow_color = Color(0.82, 0.32799998, 0.32799998, 0.8)
+theme_override_constants/shadow_offset_x = -2
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("7_f5sdv")
+theme_override_font_sizes/font_size = 30
+text = "Handicaps"
+
+[node name="AbilityDisplay" parent="TabContainer/Assets & Handicaps" unique_id=49801848 instance=ExtResource("51_8wgmm")]
+layout_mode = 0
+offset_left = -680.0
+offset_top = 112.0
+offset_right = -430.0
+offset_bottom = 173.0
+
+[node name="messages" type="CanvasGroup" parent="TabContainer/Assets & Handicaps" unique_id=200662961]
+
+[node name="MessageContainer1" type="CenterContainer" parent="TabContainer/Assets & Handicaps/messages" unique_id=865179047 node_paths=PackedStringArray("target")]
+visible = false
+offset_left = -699.0
+offset_top = 17.0
+offset_right = -448.0
+offset_bottom = 41.0
+mouse_filter = 2
+script = ExtResource("47_sqtmk")
+target = NodePath("../../../Stats & Skills/skillcontainer")
+
+[node name="NoassetMessage" type="Label" parent="TabContainer/Assets & Handicaps/messages/MessageContainer1" unique_id=979823744]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 0.61960787)
+theme_override_colors/font_outline_color = Color(0.7987912, 0.7987912, 0.79879117, 0.7607843)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 19
+text = "No special assets..."
+
+[node name="MessageContainer2" type="CenterContainer" parent="TabContainer/Assets & Handicaps/messages" unique_id=2028973161 node_paths=PackedStringArray("target")]
+visible = false
+offset_left = -701.0
+offset_top = 53.0
+offset_right = -450.0
+offset_bottom = 77.0
+mouse_filter = 2
+script = ExtResource("47_sqtmk")
+target = NodePath("../../../Stats & Skills/skillcontainer")
+
+[node name="NohandicapMessage" type="Label" parent="TabContainer/Assets & Handicaps/messages/MessageContainer2" unique_id=605522028]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 0.61960787)
+theme_override_colors/font_outline_color = Color(0.7987912, 0.7987912, 0.79879117, 0.7607843)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("33_jfiu4")
+theme_override_font_sizes/font_size = 19
+text = "No significant handicaps..."
+
+[node name="assetbox" type="CanvasGroup" parent="TabContainer/Assets & Handicaps" unique_id=488655080]
+
+[node name="scrollass" type="ScrollContainer" parent="TabContainer/Assets & Handicaps/assetbox" unique_id=341925534]
+offset_left = 12.0
+offset_top = 69.0
+offset_right = 272.0
+offset_bottom = 249.0
+
+[node name="vboxass" type="VBoxContainer" parent="TabContainer/Assets & Handicaps/assetbox/scrollass" unique_id=1672801339]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="TabContainer/Assets & Handicaps" unique_id=1507356467]
+modulate = Color(0.95, 0.8455, 0.63649994, 1)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 60.0
+offset_right = 2808.0
+offset_bottom = 237.0
+rotation = 1.5707964
+scale = Vector2(0.07, 0.04)
+texture = ExtResource("52_fb3g6")
 
 [node name="Tattoos" type="TabBar" parent="TabContainer" unique_id=194028408]
 visible = false

@@ -3,7 +3,7 @@
     "creation_only": false,
     "max_stacks": 1,
     "races": "all",
-    "description": "[b]15% bonus[/b] on a skill of your choice.",
+    "description": "[b]{chosen_skill_bonus}% bonus[/b] on a skill of your choice.",
     "effects": [
       {"modifier": "chosen_skill_bonus", "value": 15}
     ]
@@ -21,10 +21,11 @@
     "creation_only": false,
     "max_stacks": 2,
     "races": "all",
-    "description": "Gain [b]5 extra stat points[/b]. Now, one of your stats can go up to [b]18[/b] and another one to [b]17[/b] at the character's creation. Can be taken a second time upon reaching level 5.",
+    "description": "Gain [b]{racial_stat_points} extra stat points[/b]. They count as racial bonuses, so they ignore the stat limits (15 at creation, 25 afterwards). A single stat can receive at most [b]+{racial_stat_single_cap}[/b] from one use of this talent, and [b]+{racial_stat_single_cap_total}[/b] from both uses combined. [b]Can only be taken once at creation, and twice in total.[/b]",
     "effects": [
-      {"modifier": "stat_points", "value": 5},
-      {"flag": "raised_stat_caps"}
+      {"modifier": "racial_stat_points", "value": 5},
+      {"modifier": "racial_stat_single_cap", "value": 3},
+      {"modifier": "racial_stat_single_cap_total", "value": 5}
     ]
   },
   "heroic_death": {
@@ -173,7 +174,7 @@
     "creation_only": false,
     "max_stacks": 1,
     "races": ["giant"],
-    "description": "The giant becomes gigantic even for his race. Height of [b](5+Level) meters[/b], he gains another [b]1dX[/b] to all attacks, areas of effect are [b]tripled[/b], and he gains [b]10 instead of 7 HP[/b] each level. However, all attacks made against him gain [b]advantage[/b].",
+    "description": "The giant becomes gigantic even for his race. Height of [b](5+Level) meters[/b], he gains another [b]{attack_dice_bonus}dX[/b] to all attacks, areas of effect are [b]tripled[/b], and he gains [b]10 instead of 7 HP[/b] each level. However, all attacks made against him gain [b]advantage[/b].",
     "effects": [
       {"modifier": "height_set", "formula": "5+{g_lvl}"},
       {"modifier": "attack_dice_bonus", "value": 1},
