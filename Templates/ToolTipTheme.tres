@@ -3,12 +3,15 @@
 [ext_resource type="FontFile" uid="uid://3gff8tqg22fx" path="res://Fonts/lovtony.sans.ttf" id="1_u8240"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qkt4k"]
-bg_color = Color(0.1855, 0.35200825, 0.53, 1)
+content_margin_left = 5.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.5615738, 0.4686197, 0.16070235, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.21666989, 0.5315571, 0.75196767, 1)
+border_color = Color(0.8551497, 0.7368142, 0.20786, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4

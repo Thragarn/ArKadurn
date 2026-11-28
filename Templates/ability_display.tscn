@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://6ujl08jt07j8"]
 
+[ext_resource type="Script" uid="uid://do4ip7hrgl7dr" path="res://Templates/ability_display.gd" id="1_6cjeb"]
 [ext_resource type="FontFile" uid="uid://bb3og1tu2difv" path="res://Fonts/Heroking-Regular.ttf" id="1_auiij"]
 [ext_resource type="FontFile" uid="uid://biv46q8t2cbwo" path="res://Fonts/kynetic-demo.black.ttf" id="2_6cjeb"]
 
@@ -10,6 +11,7 @@ offset_top = 64.0
 offset_right = 260.0
 offset_bottom = 124.0
 theme_override_constants/separation = -4
+script = ExtResource("1_6cjeb")
 
 [node name="Abilityhead" type="Label" parent="." unique_id=1707431178]
 layout_mode = 2

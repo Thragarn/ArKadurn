@@ -17,6 +17,13 @@ extends Control
 @onready var avgh_label: RichTextLabel = %AVGHtext
 # Skills
 @onready var skills_grid: HBoxContainer = %SkillsGrid
+# Assets & Handicaps  # NEW
+@onready var asset_list: VBoxContainer = %AssetList
+@onready var handicap_list: VBoxContainer = %HandicapList
+# Zoomorph toggle  # NEW
+@onready var zoomorph_toggle: CheckButton = %ZoomorphToggle
+
+var current_race_id: String = ""  # NEW
 
 func _ready() -> void:
 	# FORCE THE CONTAINERS TO STRETCH: 
@@ -30,20 +37,21 @@ func _ready() -> void:
 	description_label.fit_content = true 
 	description_label.bbcode_enabled = true 
 	
+	zoomorph_toggle.toggled.connect(_on_zoomorph_toggled)  # NEW
 	populate_race_menu()
 	
-	# Forces the menu to display the first registered race by default on startup
-	var all_race_ids = DataManager.races.keys()
-	if not all_race_ids.is_empty():
-		display_race_details(all_race_ids[0])
+	# Forces the menu to display the first visible race by default on startup
+	var visible_ids = _get_visible_race_ids()  # NEW
+	if not visible_ids.is_empty():
+		display_race_details(visible_ids[0])
 
 func populate_race_menu() -> void:
 	# 1. Clear out any old buttons
 	for child in buttons_stack.get_children():
 		child.queue_free()
 		
-	# 2. Grab your list of 13 races from the data database
-	var all_race_ids = DataManager.races.keys()
+	# 2. Only the races allowed by the zoomorph toggle  # NEW
+	var all_race_ids = _get_visible_race_ids()
 	
 	# 3. Duplicate your custom button design for each race
 	for r_id in all_race_ids:
@@ -57,6 +65,33 @@ func populate_race_menu() -> void:
 		buttons_stack.add_child(new_button)
 
 
+# NEW: filters out zoomorphs while the toggle is off
+func _get_visible_race_ids() -> Array:
+	var ids: Array = []
+	for r_id in DataManager.races.keys():
+		if not zoomorph_toggle.button_pressed and _is_zoomorph(r_id):
+			continue
+		ids.append(r_id)
+	return ids
+
+
+func _is_zoomorph(r_id: String) -> bool:
+	var value = DataManager.races.get(r_id, {}).get("zoomorphic", null)
+	return value != null and int(value) == 1
+
+
+# NEW: rebuild the list; if the shown race just got hidden, click the first button
+# (emitting "pressed" also keeps the subrace dropdown in sync)
+func _on_zoomorph_toggled(_is_on: bool) -> void:
+	populate_race_menu()
+	if _get_visible_race_ids().has(current_race_id):
+		return
+	for child in buttons_stack.get_children():
+		if child is Button and not child.is_queued_for_deletion():
+			child.pressed.emit()
+			break
+
+
 # This fires whenever any of your custom-styled twin buttons are clicked!
 func _on_race_button_pressed(button: Button) -> void:
 	var selected_race_id = button.get_meta("race_id")
@@ -64,6 +99,7 @@ func _on_race_button_pressed(button: Button) -> void:
 
 
 func display_race_details(race_id: String) -> void:
+	current_race_id = race_id  # NEW
 	# 1. Fetch the REAL plural name from your tab-delimited file
 	var plural_title = _get_plural_from_txt(race_id)
 	race_title.text = plural_title
@@ -83,6 +119,9 @@ func display_race_details(race_id: String) -> void:
 	# 2.4. Skills
 	stats_panel.display_race_stats(race_id)
 	skills_grid.display_race_skills(race_id)
+	# 2.5. Assets & Handicaps  # NEW
+	asset_list.display_race_abilities(race_id, plural_title)
+	handicap_list.display_race_abilities(race_id, plural_title)
 	
 	# 3. Safety Check: If the file exists, read it.
 	if FileAccess.file_exists(file_path):

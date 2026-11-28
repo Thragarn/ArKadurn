@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://chsyaphx8ahdi" path="res://Assets/race menu images/asset_iconos.png" id="49_or72n"]
 [ext_resource type="Texture2D" uid="uid://bwujy3e4hyirj" path="res://Assets/race menu images/handicap_iconos.png" id="50_8wgmm"]
 [ext_resource type="PackedScene" uid="uid://6ujl08jt07j8" path="res://Templates/ability_display.tscn" id="51_8wgmm"]
+[ext_resource type="Script" uid="uid://dypx4xa1atpf0" path="res://asset_list.gd" id="52_f55j7"]
 [ext_resource type="Texture2D" uid="uid://dobxhr6i2oo0q" path="res://Assets/race menu images/l5.png" id="52_fb3g6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k3xle"]
@@ -267,11 +268,14 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="zoomorphs" type="CheckButton" parent="selection" unique_id=519188743]
+[node name="ZoomorphToggle" type="CheckButton" parent="selection" unique_id=519188743]
+unique_name_in_owner = true
 offset_left = 41.0
 offset_top = 369.0
 offset_right = 204.0
 offset_bottom = 398.0
+tooltip_text = "Zoomorphic races are special, rare lineages. They are complex and unbalanced, and mostly dedicated to experimented players and/or degenerates. The DM may refuse them in a campaign."
+theme = ExtResource("33_w31ru")
 theme_override_colors/font_color = Color(0.88, 0.88, 0.88, 0.7372549)
 theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
 theme_override_fonts/font = ExtResource("18_tldqt")
@@ -927,17 +931,15 @@ offset_bottom = 173.0
 [node name="messages" type="CanvasGroup" parent="TabContainer/Assets & Handicaps" unique_id=200662961]
 
 [node name="MessageContainer1" type="CenterContainer" parent="TabContainer/Assets & Handicaps/messages" unique_id=865179047 node_paths=PackedStringArray("target")]
-visible = false
 offset_left = -699.0
 offset_top = 17.0
 offset_right = -448.0
 offset_bottom = 41.0
 mouse_filter = 2
 script = ExtResource("47_sqtmk")
-target = NodePath("../../../Stats & Skills/skillcontainer")
+target = NodePath("../../assetbox/scrollass")
 
 [node name="NoassetMessage" type="Label" parent="TabContainer/Assets & Handicaps/messages/MessageContainer1" unique_id=979823744]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 0.61960787)
 theme_override_colors/font_outline_color = Color(0.7987912, 0.7987912, 0.79879117, 0.7607843)
@@ -947,17 +949,15 @@ theme_override_font_sizes/font_size = 19
 text = "No special assets..."
 
 [node name="MessageContainer2" type="CenterContainer" parent="TabContainer/Assets & Handicaps/messages" unique_id=2028973161 node_paths=PackedStringArray("target")]
-visible = false
 offset_left = -701.0
 offset_top = 53.0
 offset_right = -450.0
 offset_bottom = 77.0
 mouse_filter = 2
 script = ExtResource("47_sqtmk")
-target = NodePath("../../../Stats & Skills/skillcontainer")
+target = NodePath("../../assetbox/scrollhandi")
 
 [node name="NohandicapMessage" type="Label" parent="TabContainer/Assets & Handicaps/messages/MessageContainer2" unique_id=605522028]
-visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.93, 0.93, 0.93, 0.61960787)
 theme_override_colors/font_outline_color = Color(0.7987912, 0.7987912, 0.79879117, 0.7607843)
@@ -974,8 +974,24 @@ offset_top = 69.0
 offset_right = 272.0
 offset_bottom = 249.0
 
-[node name="vboxass" type="VBoxContainer" parent="TabContainer/Assets & Handicaps/assetbox/scrollass" unique_id=1672801339]
+[node name="AssetList" type="VBoxContainer" parent="TabContainer/Assets & Handicaps/assetbox/scrollass" unique_id=1672801339]
+unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("52_f55j7")
+ability_template = ExtResource("51_8wgmm")
+
+[node name="scrollhandi" type="ScrollContainer" parent="TabContainer/Assets & Handicaps/assetbox" unique_id=914128294]
+offset_left = 296.0
+offset_top = 69.0
+offset_right = 556.0
+offset_bottom = 249.0
+
+[node name="HandicapList" type="VBoxContainer" parent="TabContainer/Assets & Handicaps/assetbox/scrollhandi" unique_id=1867018618]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("52_f55j7")
+source = 1
+ability_template = ExtResource("51_8wgmm")
 
 [node name="TextureRect" type="TextureRect" parent="TabContainer/Assets & Handicaps" unique_id=1507356467]
 modulate = Color(0.95, 0.8455, 0.63649994, 1)
